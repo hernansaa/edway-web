@@ -4,8 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page_title|default:"Edway — Student Recruitment CRM" }}{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}{{ meta_description|default:'The CRM built for education recruitment.' }}{% endblock %}">
+    <title>{% block title %}{{ page_title|default:"Edway | Student Recruitment CRM — CRM + Website, One Platform" }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:'Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included.' }}{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{% block canonical %}https://edway.io{{ request.path }}{% endblock %}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}{{ page_title|default:'Edway | Student Recruitment CRM' }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ meta_description|default:'All-in-one student recruitment platform: CRM, website, WhatsApp automation, and custom development.' }}{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}https://edway.io{{ request.path }}{% endblock %}">
+    <meta property="og:image" content="{% static 'img/edway-og.png' %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Edway">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ page_title|default:'Edway | Student Recruitment CRM' }}{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ meta_description|default:'All-in-one student recruitment platform: CRM, website, WhatsApp automation, and custom development.' }}{% endblock %}">
+    <meta name="twitter:image" content="{% static 'img/edway-og.png' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/edway-logo.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/edway-logo.svg' %}">
 
     <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -192,6 +214,32 @@
         ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
     </style>
 
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Edway",
+      "url": "https://edway.io",
+      "logo": "{% static 'img/edway-logo.svg' %}",
+      "description": "All-in-one student recruitment platform: CRM, public website, WhatsApp automation, and custom development for education agencies.",
+      "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Edway",
+      "url": "https://edway.io",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://edway.io/features/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     {% block extra_head %}{% endblock %}
 </head>
 <body style="background: var(--bg); color: var(--text-body); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
@@ -309,8 +357,8 @@
             <div style="margin-top:48px;padding-top:24px;border-top:1px solid #1E293B;display:flex;flex-direction:column;align-items:center;gap:8px;" class="md:flex-row md:justify-between">
                 <p style="font-size:12px;color:#334155;">&copy; 2026 Edway. All rights reserved.</p>
                 <div style="display:flex;gap:24px;">
-                    <a href="#" style="font-size:12px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Privacy</a>
-                    <a href="#" style="font-size:12px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Terms</a>
+                    <span style="font-size:12px;color:#334155;">Privacy</span>
+                    <span style="font-size:12px;color:#334155;">Terms</span>
                 </div>
             </div>
         </div>

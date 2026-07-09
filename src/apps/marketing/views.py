@@ -23,8 +23,8 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Global Studies CRM - Modern Student Recruitment Software",
-                "meta_description": "The most advanced student recruitment CRM built by industry experts. Save $450/month vs other CRMs with better features, WhatsApp automation, and instant performance.",
+"page_title": "Edway | Student Recruitment CRM — CRM + Website, One Platform",
+"meta_description": "Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included. Save $450/month vs other CRMs with unlimited users.",
                 "showcase": generate_showcase_data(),
                 "hero_title": "The Student Recruitment CRM That Actually Works",
                 "hero_subtitle": "Built by someone who used the most popular CRMs—and found them all lacking. Save $450/month with better features.",
@@ -120,8 +120,8 @@ class FeaturesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Features - Global Studies CRM",
-                "meta_description": "Complete feature breakdown: Unified lead management, intelligent quotations, WhatsApp automation, email templates, background tasks, and more.",
+"page_title": "Features | Edway — Complete Platform for Education Agencies",
+"meta_description": "Explore all Edway features: lead management, intelligent quotations, invoicing, WhatsApp automation, email templates, public website builder, and custom development for education agencies.",
                 "feature_categories": [
                     {
                         "name": "Lead Management & CRM",
@@ -390,8 +390,8 @@ class PricingView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Pricing — Edway CRM",
-                "meta_description": "Premium dedicated infrastructure. From $299/month with unlimited users. Enterprise-grade performance without enterprise complexity.",
+"page_title": "Pricing | Edway — From $299/Month, Unlimited Users",
+"meta_description": "Edway pricing starts at $299/month with unlimited users. Professional CRM, public website, dedicated infrastructure, and custom development included. No per-seat pricing.",
                 "plans": [
                     {
                         "name": "Professional",
@@ -586,8 +586,8 @@ class ComparisonView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Edway vs Edvisor, AMS4You, Fidelo — Full Comparison",
-                "meta_description": "Honest feature-by-feature comparison. See why agencies switch from Edvisor, AMS4You, and Fidelo to Edway.",
+"page_title": "Compare | Edway vs Edvisor, AMS4You, Fidelo — Full Feature Comparison",
+"meta_description": "Honest feature-by-feature comparison of Edway vs Edvisor, AMS4You, and Fidelo. See pricing, features, infrastructure, and why agencies switch to Edway.",
                 "comparison_table": [
                     # Core Offering
                     {
@@ -759,8 +759,8 @@ class DemoView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Demo - See Global Studies CRM in Action",
-                "meta_description": "Watch a video demo or request a personalized demo with our team.",
+"page_title": "Request a Demo | Edway — See the CRM in Action",
+"meta_description": "Request a personalized demo of Edway. See how the CRM, website builder, WhatsApp automation, and custom development work for your education agency in 30 minutes.",
             },
         )
         return context
@@ -777,8 +777,8 @@ class CaseStudiesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Case Studies - Global Studies CRM",
-                "meta_description": "See how agencies increased conversions and saved money with Global Studies CRM.",
+"page_title": "Case Studies | Edway — Real Results from Education Agencies",
+"meta_description": "Real results from education agencies using Edway. See how agencies increased conversions, automated WhatsApp, and saved money with the all-in-one recruitment platform.",
             },
         )
         return context
@@ -795,8 +795,8 @@ class DocumentationView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Documentation - Global Studies CRM",
-                "meta_description": "Complete documentation, API reference, and getting started guide.",
+"page_title": "Documentation | Edway — Getting Started & API Reference",
+"meta_description": "Complete Edway documentation: getting started guide, API reference, platform setup, and integration tutorials for education agencies using the CRM and website builder.",
             },
         )
         return context
@@ -813,8 +813,8 @@ class AboutView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "About - Global Studies CRM",
-                "meta_description": "Built by industry experts who actually used the competitors and found them lacking.",
+"page_title": "About | Edway — Built by Education Recruitment Experts",
+"meta_description": "Edway was built by someone who used the most popular CRMs and found them lacking. Every feature comes from a real agency's pain point. Meet the team behind the platform.",
                 "founder_story": {
                     "title": "Built by Someone Who Actually Used the Competitors",
                     "paragraphs": [
@@ -841,8 +841,8 @@ class ContactView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Contact - Global Studies CRM",
-                "meta_description": "Get in touch with our team. We're here to help.",
+"page_title": "Contact | Edway — Get in Touch with Our Team",
+"meta_description": "Contact the Edway team. Reach us by email at info@edway.io, book a 30-minute call, or request a personalized demo of the student recruitment platform.",
             },
         )
         return context
