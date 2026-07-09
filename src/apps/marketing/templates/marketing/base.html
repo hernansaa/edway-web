@@ -201,12 +201,8 @@
         <div style="max-width:1152px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;">
 
             <!-- Logo -->
-            <a href="{% url 'marketing:home' %}" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
-                    <rect width="32" height="32" rx="7" fill="#2CCFE2"/>
-                    <path d="M9 8.5h18M9 16h12M9 23.5h15M9 8.5v15" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span style="font-size:15px;font-weight:600;color:var(--text-heading);letter-spacing:-0.02em;">edway</span>
+            <a href="{% url 'marketing:home' %}" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;">
+                <img src="{% static 'img/edway-logo.svg' %}" alt="Edway" style="height:30px;width:auto;">
             </a>
 
             <!-- Center nav -->
@@ -271,12 +267,8 @@
 
                 <!-- Brand -->
                 <div style="grid-column:span 2;">
-                    <a href="{% url 'marketing:home' %}" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
-                            <rect width="32" height="32" rx="7" fill="#2CCFE2"/>
-                            <path d="M9 8.5h18M9 16h12M9 23.5h15M9 8.5v15" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span style="font-size:15px;font-weight:600;color:#F1F5F9;letter-spacing:-0.02em;">edway</span>
+                    <a href="{% url 'marketing:home' %}" style="display:inline-flex;align-items:center;text-decoration:none;margin-bottom:16px;">
+                        <img src="{% static 'img/edway-logo.svg' %}" alt="Edway" style="height:28px;width:auto;">
                     </a>
                     <p style="font-size:13px;line-height:1.75;color:#64748B;max-width:280px;">
                         The CRM built for education recruitment.<br>From first enquiry to enrolment—automated.
