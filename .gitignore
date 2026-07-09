@@ -36,3 +36,4 @@ local_settings.py
 # OS
 Thumbs.db
 tailwindcss
+staticfiles/

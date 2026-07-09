@@ -22,3 +22,21 @@ Watch mode:
 ```bash
 ./src/static/tailwindcss -i tailwind.input.css -o src/static/css/tailwind.css --watch
 ```
+
+## Deploy to Railway
+
+Railway auto-detects Django via `manage.py` and `Procfile`. No additional config needed.
+
+Set these environment variables in Railway:
+
+| Variable | Value |
+|---|---|
+| `SECRET_KEY` | A random string (generate with `openssl rand -hex 32`) |
+| `ALLOWED_HOSTS` | `.railway.app,yourdomain.com` |
+| `CSRF_TRUSTED_ORIGINS` | `https://*.railway.app,https://yourdomain.com` |
+
+Optional for email in production:
+| Variable | Value |
+|---|---|
+| `EMAIL_BACKEND` | `django.core.mail.backends.smtp.EmailBackend` |
+| `EMAIL_HOST` + `EMAIL_PORT` + credentials | Your SMTP server |
