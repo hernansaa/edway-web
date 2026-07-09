@@ -24,10 +24,10 @@ class HomeView(TemplateView):
         context.update(
             {
                 "page_title": "Global Studies CRM - Modern Student Recruitment Software",
-                "meta_description": "The most advanced student recruitment CRM built by industry experts. Save $450/month vs Edvisor with better features, WhatsApp automation, and instant performance.",
+                "meta_description": "The most advanced student recruitment CRM built by industry experts. Save $450/month vs other CRMs with better features, WhatsApp automation, and instant performance.",
                 "showcase": generate_showcase_data(),
                 "hero_title": "The Student Recruitment CRM That Actually Works",
-                "hero_subtitle": "Built by someone who used Edvisor, AMS4You, and Fidelo—and found them all lacking. Save $450/month with better features.",
+                "hero_subtitle": "Built by someone who used the most popular CRMs—and found them all lacking. Save $450/month with better features.",
                 "key_features": [
                     {
                         "icon": "🎯",
@@ -47,7 +47,7 @@ class HomeView(TemplateView):
                     {
                         "icon": "💰",
                         "title": "Save $450/Month",
-                        "description": "$99/month unlimited users vs. $549/month for 5 users on Edvisor.",
+                        "description": "$99/month unlimited users vs. $549/month for 5 users on other CRMs.",
                     },
                     {
                         "icon": "📧",
@@ -600,14 +600,14 @@ class ComparisonView(TemplateView):
                     {
                         "feature": "Public website included",
                         "edvisor": "✗",
-                        "ams4you": "✗",
+                        "ams4you": "Student panel add-on",
                         "fidelo": "✗",
                         "edway": "✓ Full agency website",
                     },
                     {
                         "feature": "Custom feature development",
                         "edvisor": "✗",
-                        "ams4you": "✗",
+                        "ams4you": "Available",
                         "fidelo": "✗",
                         "edway": "✓ Included in subscription",
                     },
@@ -818,9 +818,9 @@ class AboutView(TemplateView):
                 "founder_story": {
                     "title": "Built by Someone Who Actually Used the Competitors",
                     "paragraphs": [
-                        "I spent years using Edvisor, AMS4You, and Fidelo. Each one frustrated me in different ways.",
-                        "Edvisor was expensive and slow. AMS4You was rigid and outdated. Fidelo was basic and limited.",
-                        "So I built Global Studies CRM—the system I wish existed when I started.",
+                        "I spent years using the three most popular CRMs in the industry. Each one frustrated me in different ways.",
+                        "One was expensive and slow. Another was rigid and outdated. A third was basic and limited.",
+                        "So I built Edway—the system I wish existed when I started.",
                         "Every feature solves a real problem. Every optimization came from actual pain points.",
                         "This isn't just another CRM. It's the evolution of student recruitment software.",
                     ],
