@@ -1,0 +1,48 @@
+{% extends "marketing/base.html" %}
+
+{% block content %}
+
+<section style="padding:72px 0 80px;background:var(--bg);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+        <div class="grid grid-cols-1 lg:grid-cols-2" style="gap:64px;align-items:start;">
+
+            <div>
+                <p class="sintra-label" style="margin-bottom:14px;">About</p>
+                <h1 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);margin-bottom:24px;">
+                    Built by operators, not observers.
+                </h1>
+
+                <div style="display:flex;flex-direction:column;gap:16px;">
+                    {% for paragraph in founder_story.paragraphs %}
+                    <p style="font-size:16px;color:var(--text-body);line-height:1.8;">{{ paragraph }}</p>
+                    {% endfor %}
+                </div>
+
+                <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="{% url 'marketing:demo' %}" class="btn-primary" style="padding:13px 28px;font-size:15px;">
+                        Book a demo
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="{% url 'marketing:features' %}" class="btn-secondary" style="padding:13px 28px;font-size:15px;">See features</a>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px;">
+                <div class="sintra-card" style="padding:28px;">
+                    <p class="sintra-label" style="margin-bottom:12px;">The problem</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">Every existing CRM for education recruitment was either built by software engineers who never worked in an agency, or acquired by investors who raised prices and stopped shipping features.</p>
+                </div>
+                <div class="sintra-card" style="padding:28px;">
+                    <p class="sintra-label" style="margin-bottom:12px;">The solution</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We ran a real agency. We know what takes 3 hours and should take 3 minutes. Sintra was built to eliminate that gap—every feature comes from a real frustration.</p>
+                </div>
+                <div class="sintra-card" style="padding:28px;">
+                    <p class="sintra-label" style="margin-bottom:12px;">The commitment</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We ship weekly. We talk to every customer. We don't raise prices to cover marketing budgets. This is the product we would have paid anything for—so we keep the price fair.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

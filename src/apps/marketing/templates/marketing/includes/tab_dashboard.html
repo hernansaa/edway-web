@@ -1,0 +1,45 @@
+<!-- Dashboard KPIs page header -->
+<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;">
+    <div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#ECFDF5;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#059669;border:1px solid #A7F3D0;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#059669;display:inline-block;"></span>
+                Live
+            </span>
+            <span style="font-size:11px;color:#64748B;">Key performance indicators</span>
+        </div>
+        <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.03em;color:#0F172A;margin:0 0 2px;">Dashboard KPIs</h2>
+        <p style="font-size:12px;color:#475569;margin:0;max-width:500px;">Real-time metrics across leads, revenue, conversion, and student body.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+        <span style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#64748B;">Period</span>
+        <div style="background:#fff;border:1px solid #CBD5E1;border-radius:6px;padding:6px 22px 6px 10px;font-size:12px;font-weight:500;color:#0F172A;display:flex;align-items:center;gap:4px;cursor:pointer;position:relative;">
+            Last 30 days
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+        </div>
+    </div>
+</div>
+
+<!-- KPI cards -->
+<div class="r3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    {% for metric in showcase.metrics %}
+    {% cycle '#F59E0B,#FBBF24' '#059669,#34D399' '#7C3AED,#A78BFA' '#2563EB,#60A5FA' '#0D9488,#2DD4BF' '#4F46E5,#818CF8' as gradient silent %}
+    {% cycle '#FFFBEB' '#ECFDF5' '#FAF5FF' '#EFF6FF' '#F0FDFA' '#EEF2FF' as icon_bg silent %}
+    {% cycle '#FEF3C7' '#A7F3D0' '#E9D5FF' '#BFDBFE' '#99F6E4' '#C7D2FE' as icon_border silent %}
+    {% cycle '#D97706' '#059669' '#7C3AED' '#2563EB' '#0D9488' '#4F46E5' as icon_color silent %}
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:20px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);">
+        <span style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,{{ gradient }});"></span>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:{{ icon_bg }};border:1px solid {{ icon_border }};display:flex;align-items:center;justify-content:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ metric.icon }}"/></svg>
+            </div>
+            <span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;background:{{ icon_bg }};color:{{ icon_color }};border:1px solid {{ icon_border }};">{{ metric.change }}</span>
+        </div>
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#64748B;margin:0 0 4px;">{{ metric.label }}</p>
+        <p style="font-size:24px;font-weight:700;color:#0F172A;font-variant-numeric:tabular-nums;line-height:1;margin:0 0 8px;">{{ metric.value }}</p>
+        <svg width="100%" height="24" viewBox="0 0 200 24" preserveAspectRatio="none" style="display:block;">
+            <path d="M0,20 Q10,17 20,15 Q30,12 40,14 Q50,9 60,10 Q70,6 80,7 Q90,4 100,3 Q110,5 120,4 Q130,7 140,5 Q150,9 160,7 Q170,10 180,9 Q190,7 200,5" fill="none" stroke="{{ icon_color }}" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+        </svg>
+    </div>
+    {% endfor %}
+</div>

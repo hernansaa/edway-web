@@ -1,0 +1,71 @@
+<!-- Pipeline page header -->
+<div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;">
+    <div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#EFF6FF;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#1E40AF;border:1px solid #BFDBFE;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#1E40AF;display:inline-block;"></span>
+                Live
+            </span>
+            <span style="font-size:11px;color:#64748B;">8-stage lead pipeline</span>
+        </div>
+        <h2 style="font-size:20px;font-weight:700;letter-spacing:-0.03em;color:#0F172A;margin:0 0 2px;">Lead Pipeline</h2>
+        <p style="font-size:12px;color:#475569;margin:0;max-width:500px;">Track leads from first contact through to enrollment across all stages.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+        <span style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#64748B;">Stage</span>
+        <div style="background:#fff;border:1px solid #CBD5E1;border-radius:6px;padding:6px 22px 6px 10px;font-size:12px;font-weight:500;color:#0F172A;display:flex;align-items:center;gap:4px;cursor:pointer;position:relative;">
+            All stages
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+        </div>
+    </div>
+</div>
+
+<!-- Kanban board -->
+<div class="r3k" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    {% for stage_name, leads in showcase.pipeline_stages.items %}
+    {% if stage_name != "Converted" %}
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.04);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #F1F5F9;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#64748B;">{{ stage_name }}</span>
+            <span style="font-size:11px;font-weight:600;background:#F1F5F9;border-radius:100px;padding:2px 8px;color:#64748B;">{{ leads|length }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+            {% for lead in leads|slice:":2" %}
+            <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:12px;box-shadow:0 1px 2px rgba(0,0,0,.04);">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;">
+                    <span style="font-size:15px;line-height:1;">{{ lead.flag }}</span>
+                    <span style="font-size:13px;font-weight:600;color:#0F172A;">{{ lead.name }}</span>
+                </div>
+                <div style="font-size:12px;color:#64748B;margin-bottom:6px;">{{ lead.program }}</div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                    <span style="font-size:11px;color:#94A3B8;">{{ lead.source }} · {{ lead.time_ago }}</span>
+                    {% if lead.quotation_amount %}
+                    <span style="font-size:11px;font-weight:600;color:#2563EB;">{{ lead.quotation_amount }}</span>
+                    {% endif %}
+                </div>
+                {% if lead.quotation_status == "sent" %}
+                <div style="margin-top:8px;padding:3px 8px;background:#EFF6FF;border-radius:4px;display:inline-block;">
+                    <span style="font-size:10px;color:#1E40AF;font-weight:500;">Quotation sent</span>
+                </div>
+                {% elif lead.quotation_status == "approved" %}
+                <div style="margin-top:8px;padding:3px 8px;background:#ECFDF5;border-radius:4px;display:inline-block;">
+                    <span style="font-size:10px;color:#059669;font-weight:500;">Approved ✓</span>
+                </div>
+                {% elif lead.quotation_status == "negotiating" %}
+                <div style="margin-top:8px;padding:3px 8px;background:#FEF3C7;border-radius:4px;display:inline-block;">
+                    <span style="font-size:10px;color:#D97706;font-weight:500;">Negotiating</span>
+                </div>
+                {% endif %}
+                <div style="margin-top:8px;padding-top:8px;border-top:1px solid #F1F5F9;display:flex;align-items:center;gap:4px;">
+                    <div style="width:16px;height:16px;border-radius:50%;background:#2563EB;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <span style="color:#fff;font-size:8px;font-weight:600;">{{ lead.assigned_to|first }}</span>
+                    </div>
+                    <span style="font-size:11px;color:#64748B;">{{ lead.assigned_to }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

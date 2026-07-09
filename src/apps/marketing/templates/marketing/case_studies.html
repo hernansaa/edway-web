@@ -1,0 +1,21 @@
+{% extends "marketing/base.html" %}
+
+{% block content %}
+
+<section style="padding:72px 0 80px;background:var(--bg);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+        <p class="sintra-label" style="margin-bottom:14px;">Case studies</p>
+        <h1 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);max-width:520px;margin-bottom:16px;">
+            How agencies use Sintra.
+        </h1>
+        <p style="font-size:17px;color:var(--text-body);max-width:460px;line-height:1.75;margin-bottom:48px;">
+            Real results from agencies who switched from Edvisor, AMS4You, and manual workflows.
+        </p>
+        <div style="padding:56px;border:1px dashed var(--border);border-radius:14px;text-align:center;background:var(--bg-subtle);">
+            <p style="font-size:14px;color:var(--text-muted);">Case studies publishing soon.</p>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:8px;"><a href="{% url 'marketing:demo' %}" style="color:var(--blue);text-decoration:none;">Book a demo →</a> to hear stories directly from our customers.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,338 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title|default:"Sintra — Student Recruitment CRM" }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:'The CRM built for education recruitment.' }}{% endblock %}">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Compiled with custom theme) -->
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* ============================================
+           SINTRA — LIGHT PROFESSIONAL DESIGN SYSTEM
+           Education-grade, trust-first, ultra-clean
+           ============================================ */
+
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+
+        /* Tokens */
+        :root {
+            --bg:           #FFFFFF;
+            --bg-subtle:    #F8F9FB;
+            --bg-section:   #F1F5F9;
+            --border:       #E2E8F0;
+            --border-muted: #F1F5F9;
+
+            --text-heading: #0F1629;   /* Deep navy — authority + trust */
+            --text-body:    #475569;   /* Slate — readable, professional */
+            --text-muted:   #94A3B8;   /* Light slate */
+            --text-subtle:  #CBD5E1;
+
+            --blue:         #1D4ED8;   /* Institutional blue — the trust anchor */
+            --blue-hover:   #1E40AF;
+            --blue-light:   #EFF6FF;
+            --blue-border:  #BFDBFE;
+            --blue-text:    #1E40AF;
+
+            --green:        #059669;
+            --green-light:  #ECFDF5;
+            --green-border: #A7F3D0;
+
+            --red-light:    #FEF2F2;
+            --red-border:   #FECACA;
+            --red-text:     #DC2626;
+
+            --navy-footer:  #0F172A;   /* Deep navy footer — strong, confident */
+        }
+
+        /* Label / eyebrow */
+        .sintra-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        /* Pill badge */
+        .sintra-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--blue-light);
+            border: 1px solid var(--blue-border);
+            color: var(--blue-text);
+        }
+
+        /* Card */
+        .sintra-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        /* Feature icon */
+        .feature-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--blue-light);
+            border: 1px solid var(--blue-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Stat number */
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-heading);
+        }
+
+        /* Subtle grid pattern for hero */
+        .hero-grid {
+            background-image:
+                linear-gradient(var(--border-muted) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+            background-size: 56px 56px;
+        }
+
+        /* Primary button */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--blue);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: none;
+            transition: background 0.15s;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--blue-hover); }
+
+        /* Secondary button */
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--text-body);
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: border-color 0.15s, color 0.15s, background 0.15s;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: #CBD5E1; color: var(--text-heading); background: var(--bg-subtle); }
+
+        /* Nav link */
+        .nav-link {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-body);
+            transition: color 0.15s;
+        }
+        .nav-link:hover { color: var(--text-heading); }
+
+        /* Check icon list */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        /* Mockup window chrome */
+        .mockup-chrome {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 20px 40px -8px rgba(15,22,41,0.08);
+        }
+
+        /* Subtle glow for mockup */
+        .mockup-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 24px 48px -8px rgba(29,78,216,0.1);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F8F9FB; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body style="background: var(--bg); color: var(--text-body); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+
+    <!-- Navigation -->
+    <header style="position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);" x-data="{ open: false }">
+        <div style="max-width:1152px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;">
+
+            <!-- Logo -->
+            <a href="{% url 'marketing:home' %}" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
+                    <rect width="32" height="32" rx="7" fill="#1D4ED8"/>
+                    <path d="M8 9 C22 9, 24 14, 16 16 C8 18, 10 23, 24 23" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="font-size:15px;font-weight:600;color:var(--text-heading);letter-spacing:-0.02em;">sintra</span>
+            </a>
+
+            <!-- Center nav -->
+            <nav class="hidden md:flex" style="gap:28px;align-items:center;">
+                <a href="{% url 'marketing:features' %}" class="nav-link">Features</a>
+                <a href="{% url 'marketing:pricing' %}" class="nav-link">Pricing</a>
+                <a href="{% url 'marketing:comparison' %}" class="nav-link">Compare</a>
+                <a href="/livedemo/" class="nav-link" style="display:flex;align-items:center;gap:6px;">
+                    Live Demo
+                    <span style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></span>
+                </a>
+                <a href="{% url 'marketing:documentation' %}" class="nav-link">Docs</a>
+                <a href="{% url 'marketing:about' %}" class="nav-link">About</a>
+            </nav>
+
+            <!-- Right CTAs -->
+            <div class="hidden md:flex" style="gap:12px;align-items:center;">
+                <a href="{% url 'marketing:demo' %}" class="nav-link">Sign in</a>
+                <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="padding:9px 18px;font-size:13px;">
+                    Request demo
+                </a>
+                <a href="/livedemo/" class="btn-primary" style="padding:9px 18px;font-size:13px;">
+                    Try Live Demo
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <!-- Mobile toggle -->
+            <button @click="open = !open" class="md:hidden" style="background:none;border:none;cursor:pointer;color:var(--text-body);padding:4px;">
+                <svg x-show="!open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                <svg x-show="open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="open"
+             x-transition:enter="transition ease-out duration-150"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-100"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             style="border-top:1px solid var(--border);background:#fff;">
+            <div style="max-width:1152px;margin:0 auto;padding:16px 24px;display:flex;flex-direction:column;gap:16px;">
+                <a href="{% url 'marketing:features' %}" class="nav-link" style="padding:4px 0;">Features</a>
+                <a href="{% url 'marketing:pricing' %}" class="nav-link" style="padding:4px 0;">Pricing</a>
+                <a href="{% url 'marketing:comparison' %}" class="nav-link" style="padding:4px 0;">Compare</a>
+                <a href="/livedemo/" class="nav-link" style="padding:4px 0;display:flex;align-items:center;gap:6px;">
+                    Live Demo
+                    <span style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></span>
+                </a>
+                <a href="{% url 'marketing:documentation' %}" class="nav-link" style="padding:4px 0;">Docs</a>
+                <a href="{% url 'marketing:about' %}" class="nav-link" style="padding:4px 0;">About</a>
+                <div style="padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px;">
+                    <a href="{% url 'marketing:demo' %}" class="nav-link">Sign in</a>
+                    <a href="/livedemo/" class="btn-primary" style="justify-content:center;">Try Live Demo</a>
+                    <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="justify-content:center;text-align:center;">Request demo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main style="padding-top: 60px;">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer — deep navy, authoritative -->
+    <footer style="background: var(--navy-footer); color: #94A3B8;">
+        <div style="max-width:1152px;margin:0 auto;padding:64px 24px 40px;">
+            <div class="grid grid-cols-2 md:grid-cols-5" style="gap:40px;">
+
+                <!-- Brand -->
+                <div style="grid-column:span 2;">
+                    <a href="{% url 'marketing:home' %}" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
+                            <rect width="32" height="32" rx="7" fill="#1D4ED8"/>
+                            <path d="M8 9 C22 9, 24 14, 16 16 C8 18, 10 23, 24 23" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size:15px;font-weight:600;color:#F1F5F9;letter-spacing:-0.02em;">sintra</span>
+                    </a>
+                    <p style="font-size:13px;line-height:1.75;color:#64748B;max-width:280px;">
+                        The CRM built for education recruitment.<br>From first enquiry to enrolment—automated.
+                    </p>
+                </div>
+
+                <!-- Product -->
+                <div>
+                    <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin-bottom:16px;">Product</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                        <li><a href="{% url 'marketing:features' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Features</a></li>
+                        <li><a href="{% url 'marketing:pricing' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Pricing</a></li>
+                        <li><a href="{% url 'marketing:comparison' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Compare</a></li>
+                        <li><a href="{% url 'marketing:demo' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Demo</a></li>
+                        <li><a href="/livedemo/" style="font-size:13px;color:#94A3B8;text-decoration:none;transition:color 0.15s;font-weight:500;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#94A3B8'">Live Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin-bottom:16px;">Resources</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                        <li><a href="{% url 'marketing:documentation' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Documentation</a></li>
+                        <li><a href="{% url 'marketing:case_studies' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Case studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin-bottom:16px;">Company</p>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+                        <li><a href="{% url 'marketing:about' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">About</a></li>
+                        <li><a href="{% url 'marketing:contact' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top:48px;padding-top:24px;border-top:1px solid #1E293B;display:flex;flex-direction:column;align-items:center;gap:8px;" class="md:flex-row md:justify-between">
+                <p style="font-size:12px;color:#334155;">&copy; 2026 Sintra. All rights reserved.</p>
+                <div style="display:flex;gap:24px;">
+                    <a href="#" style="font-size:12px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Privacy</a>
+                    <a href="#" style="font-size:12px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% extends "marketing/base.html" %}
+
+{% block content %}
+
+<section style="padding:96px 0 64px;border-bottom:1px solid var(--border);background:var(--bg);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+        <p class="sintra-label" style="margin-bottom:16px;">Complete Platform</p>
+        <h1 style="font-size:clamp(36px,4vw,56px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);max-width:720px;margin-bottom:20px;">
+            Everything you need to run your education agency.
+        </h1>
+        <p style="font-size:18px;color:var(--text-body);max-width:600px;line-height:1.75;">
+            CRM, website, quotations, invoicing, WhatsApp automation, and custom development—all in one platform. No piecing together multiple tools.
+        </p>
+    </div>
+</section>
+
+{% for category in feature_categories %}
+<section style="padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:48px;">
+            <div style="width:56px;height:56px;background:var(--blue-light);border:1px solid var(--blue-border);border-radius:12px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    {% if category.icon == "🎯" %}<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+                    {% elif category.icon == "📋" %}<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/>
+                    {% elif category.icon == "💰" %}<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20M2 14h20"/>
+                    {% elif category.icon == "📊" %}<line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+                    {% elif category.icon == "💬" %}<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    {% elif category.icon == "🌐" %}<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    {% elif category.icon == "🎓" %}<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    {% elif category.icon == "📈" %}<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                    {% elif category.icon == "⚙️" %}<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    {% else %}<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>{% endif %}
+                </svg>
+            </div>
+            <h2 style="font-size:28px;font-weight:700;color:var(--text-heading);letter-spacing:-0.03em;">{{ category.name }}</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style="gap:20px;">
+            {% for feature in category.features %}
+            <div style="padding:28px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:12px;transition:all 0.2s ease;" onmouseover="this.style.borderColor='var(--blue)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+                <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;">
+                    <div style="width:24px;height:24px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <h3 style="font-size:16px;font-weight:600;color:var(--text-heading);line-height:1.4;">{{ feature.title }}</h3>
+                </div>
+                <p style="font-size:14px;color:var(--text-body);line-height:1.7;">{{ feature.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+<section style="padding:96px 0;background:linear-gradient(135deg, var(--bg) 0%, var(--blue-light) 100%);border-top:1px solid var(--border);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;text-align:center;">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:24px;">
+            Ready to get started?
+        </div>
+        <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.2;color:var(--text-heading);max-width:680px;margin:0 auto 20px;">
+            See the complete platform in action.
+        </h2>
+        <p style="font-size:17px;color:var(--text-body);max-width:540px;margin:0 auto 40px;line-height:1.75;">
+            Jump straight into the live demo or book a personalized walkthrough tailored to your workflow.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+            <a href="/livedemo/" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:16px;">
+                Try Live Demo
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:16px;">
+                Book a demo
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

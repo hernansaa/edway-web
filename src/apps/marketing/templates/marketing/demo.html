@@ -1,0 +1,158 @@
+{% extends "marketing/base.html" %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'vendor/intl-tel-input/css/intlTelInput.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/phone-input.css' %}">
+<style>
+  #id_phone_demo { width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text-heading); outline: none; transition: border-color 0.15s; font-family: inherit; }
+  #id_phone_demo:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-light); }
+  .iti { width: 100%; }
+  .iti__country-list { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; }
+  .iti__country.iti__highlight { background: var(--hover-bg); }
+  .iti__country-name, .iti__dial-code { color: var(--text-body); }
+  .iti__selected-flag { padding-left: 14px; }
+  .iti--separate-dial-code .iti__selected-flag { background: transparent; border-radius: 8px 0 0 8px; }
+  .iti--separate-dial-code .iti__selected-flag:hover, .iti--separate-dial-code .iti__selected-flag:focus { background: var(--hover-bg); }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section style="padding:72px 0 80px;background:var(--bg);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+
+        <!-- Live Demo callout -->
+        <div style="margin-bottom:48px;padding:28px 32px;background:linear-gradient(135deg, var(--green-light) 0%, #fff 100%);border:2px solid var(--green);border-radius:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
+            <div>
+                <div style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:12px;">
+                    Want to dive in right now?
+                </div>
+                <h2 style="font-size:18px;font-weight:600;color:var(--text-heading);margin-bottom:4px;">Try the Live Demo — instant access</h2>
+                <p style="font-size:14px;color:var(--text-body);line-height:1.6;max-width:480px;margin:0;">
+                    Explore the full CRM with real data. No form, no waiting, no commitment.
+                </p>
+            </div>
+            <a href="/livedemo/" class="btn-primary" style="flex-shrink:0;padding:13px 28px;font-size:15px;gap:10px;background:var(--text-heading);">
+                Launch Live Demo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2" style="gap:64px;align-items:start;">
+
+            <!-- Left: context -->
+            <div style="padding-top:8px;">
+                <p class="sintra-label" style="margin-bottom:14px;">Request a demo</p>
+                <h1 style="font-size:clamp(28px,3.5vw,44px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);margin-bottom:16px;">
+                    30 minutes.<br>Your whole workflow, live.
+                </h1>
+                <p style="font-size:16px;color:var(--text-body);line-height:1.75;margin-bottom:40px;">
+                    We'll walk through lead capture, the quotation flow, WhatsApp automation, and the dashboard. Then answer every question you have—no sales script.
+                </p>
+
+                <div style="display:flex;flex-direction:column;gap:20px;">
+                    <div style="display:flex;align-items:flex-start;gap:14px;">
+                        <div class="feature-icon" style="flex-shrink:0;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <p style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:4px;">Tailored to your agency</p>
+                            <p style="font-size:13px;color:var(--text-body);line-height:1.6;">We look at your current workflow first and show you exactly what changes.</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:14px;">
+                        <div class="feature-icon" style="flex-shrink:0;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <p style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:4px;">Response within 24 hours</p>
+                            <p style="font-size:13px;color:var(--text-body);line-height:1.6;">We'll confirm a time that works for your team.</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:14px;">
+                        <div class="feature-icon" style="flex-shrink:0;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div>
+                            <p style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:4px;">No commitment required</p>
+                            <p style="font-size:13px;color:var(--text-body);line-height:1.6;">No credit card. No contract. Just a conversation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: form -->
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:40px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.04),0 12px 28px -4px rgba(15,22,41,0.06);">
+
+                {% if messages %}
+                {% for message in messages %}
+                <div style="padding:12px 16px;border-radius:8px;margin-bottom:24px;{% if message.tags == 'success' %}background:var(--green-light);border:1px solid var(--green-border);color:var(--green);{% else %}background:var(--red-light);border:1px solid var(--red-border);color:var(--red-text);{% endif %}font-size:13px;">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+
+                <h2 style="font-size:18px;font-weight:600;color:var(--text-heading);margin-bottom:24px;letter-spacing:-0.02em;">Tell us about your agency</h2>
+
+                <form method="post" action="{% url 'marketing:request_demo' %}" style="display:flex;flex-direction:column;gap:18px;">
+                    {% csrf_token %}
+
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:500;color:var(--text-body);margin-bottom:6px;">Full name</label>
+                        <input type="text" name="name" required placeholder="Maria Rodriguez" style="width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--text-heading);outline:none;transition:border-color 0.15s;font-family:inherit;" onfocus="this.style.borderColor='var(--blue)';this.style.boxShadow='0 0 0 3px var(--blue-light)'" onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+                    </div>
+
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:500;color:var(--text-body);margin-bottom:6px;">Work email</label>
+                        <input type="email" name="email" required placeholder="maria@agencia.com" style="width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--text-heading);outline:none;transition:border-color 0.15s;font-family:inherit;" onfocus="this.style.borderColor='var(--blue)';this.style.boxShadow='0 0 0 3px var(--blue-light)'" onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+                    </div>
+
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:500;color:var(--text-body);margin-bottom:6px;">Agency name</label>
+                        <input type="text" name="company" required placeholder="Global Studies Agency" style="width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--text-heading);outline:none;transition:border-color 0.15s;font-family:inherit;" onfocus="this.style.borderColor='var(--blue)';this.style.boxShadow='0 0 0 3px var(--blue-light)'" onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+                    </div>
+
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:500;color:var(--text-body);margin-bottom:6px;">Phone <span style="color:var(--text-muted);font-weight:400;">(optional)</span></label>
+                        <input type="tel" name="phone" id="id_phone_demo" data-phone-input placeholder="+1 555 000 0000">
+                    </div>
+
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:500;color:var(--text-body);margin-bottom:6px;">What are you currently using?</label>
+                        <textarea name="message" rows="3" placeholder="Edvisor, AMS4You, spreadsheets..." style="width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--text-heading);outline:none;transition:border-color 0.15s;resize:vertical;font-family:inherit;" onfocus="this.style.borderColor='var(--blue)';this.style.boxShadow='0 0 0 3px var(--blue-light)'" onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'"></textarea>
+                    </div>
+
+
+
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:13px;font-size:14px;">
+                        Request demo
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+
+                    <p style="font-size:11px;color:var(--text-muted);text-align:center;">We'll respond within 24 hours · No credit card required</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'vendor/intl-tel-input/js/intlTelInput.min.js' %}"></script>
+<script src="{% static 'js/phone-input.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('form[action*="request_demo"]');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            validateAndConvertPhoneOnSubmit('id_phone_demo', e, false);
+            var btn = this.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.innerHTML = 'Sending...';
+        });
+    }
+});
+</script>
+{% endblock %}
