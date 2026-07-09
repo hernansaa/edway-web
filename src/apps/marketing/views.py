@@ -65,42 +65,42 @@ class HomeView(TemplateView):
                         "label": "Price / 5 users",
                         "edvisor": "$549/mo",
                         "ams4you": "€320/mo",
-                        "sintra": "$99/mo",
+                        "edway": "$99/mo",
                         "highlight": True,
                     },
                     {
                         "label": "WhatsApp",
                         "edvisor": "Not included",
                         "ams4you": "€50/mo extra",
-                        "sintra": "Included",
+                        "edway": "Included",
                         "highlight": True,
                     },
                     {
                         "label": "Landing pages",
                         "edvisor": "Not available",
                         "ams4you": "Not available",
-                        "sintra": "Included",
+                        "edway": "Included",
                         "highlight": True,
                     },
                     {
                         "label": "Facebook ads",
                         "edvisor": "Zapier required",
                         "ams4you": "Not available",
-                        "sintra": "Native webhook",
+                        "edway": "Native webhook",
                         "highlight": True,
                     },
                     {
                         "label": "Self-hosting",
                         "edvisor": "No",
                         "ams4you": "No",
-                        "sintra": "Free",
+                        "edway": "Free",
                         "highlight": True,
                     },
                     {
                         "label": "Unlimited users",
                         "edvisor": "$50/seat",
                         "ams4you": "€30/seat",
-                        "sintra": "Yes",
+                        "edway": "Yes",
                         "highlight": True,
                     },
                 ],
@@ -390,7 +390,7 @@ class PricingView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Pricing — Sintra CRM",
+                "page_title": "Pricing — Edway CRM",
                 "meta_description": "Premium dedicated infrastructure. From $299/month with unlimited users. Enterprise-grade performance without enterprise complexity.",
                 "plans": [
                     {
@@ -544,7 +544,7 @@ class PricingView(TemplateView):
                         "performance": "Variable (shared)",
                     },
                     {
-                        "name": "Sintra (Business)",
+                        "name": "Edway (Business)",
                         "base_price": "$599/month",
                         "per_user": "Unlimited",
                         "total_5_users": "$599/month",
@@ -586,8 +586,8 @@ class ComparisonView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-                "page_title": "Sintra vs Edvisor, AMS4You, Fidelo — Full Comparison",
-                "meta_description": "Honest feature-by-feature comparison. See why agencies switch from Edvisor, AMS4You, and Fidelo to Sintra.",
+                "page_title": "Edway vs Edvisor, AMS4You, Fidelo — Full Comparison",
+                "meta_description": "Honest feature-by-feature comparison. See why agencies switch from Edvisor, AMS4You, and Fidelo to Edway.",
                 "comparison_table": [
                     # Core Offering
                     {
@@ -595,28 +595,28 @@ class ComparisonView(TemplateView):
                         "edvisor": "CRM only",
                         "ams4you": "CRM only",
                         "fidelo": "CRM only",
-                        "sintra": "CRM + Website + Custom Dev",
+                        "edway": "CRM + Website + Custom Dev",
                     },
                     {
                         "feature": "Public website included",
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ Full agency website",
+                        "edway": "✓ Full agency website",
                     },
                     {
                         "feature": "Custom feature development",
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ Included in subscription",
+                        "edway": "✓ Included in subscription",
                     },
                     {
                         "feature": "Dedicated server",
                         "edvisor": "Shared",
                         "ams4you": "Shared",
                         "fidelo": "Shared",
-                        "sintra": "✓ 100% dedicated",
+                        "edway": "✓ 100% dedicated",
                     },
                     # Pricing
                     {
@@ -624,21 +624,21 @@ class ComparisonView(TemplateView):
                         "edvisor": "~$549",
                         "ams4you": "~€320",
                         "fidelo": "~$275",
-                        "sintra": "$299",
+                        "edway": "$299",
                     },
                     {
                         "feature": "User limits",
                         "edvisor": "Per seat pricing",
                         "ams4you": "Per seat pricing",
                         "fidelo": "Per seat pricing",
-                        "sintra": "✓ Unlimited",
+                        "edway": "✓ Unlimited",
                     },
                     {
                         "feature": "Student/quotation limits",
                         "edvisor": "Varies by plan",
                         "ams4you": "Varies by plan",
                         "fidelo": "Varies by plan",
-                        "sintra": "✓ Unlimited",
+                        "edway": "✓ Unlimited",
                     },
                     # Website & Marketing
                     {
@@ -646,28 +646,28 @@ class ComparisonView(TemplateView):
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ Unlimited pages",
+                        "edway": "✓ Unlimited pages",
                     },
                     {
                         "feature": "Blog system with SEO",
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ Full CMS",
+                        "edway": "✓ Full CMS",
                     },
                     {
                         "feature": "Facebook lead ads integration",
                         "edvisor": "Via Zapier",
                         "ams4you": "Limited",
                         "fidelo": "Via Zapier",
-                        "sintra": "✓ Native webhook",
+                        "edway": "✓ Native webhook",
                     },
                     {
                         "feature": "Custom domain & SSL",
                         "edvisor": "N/A",
                         "ams4you": "N/A",
                         "fidelo": "N/A",
-                        "sintra": "✓ Included",
+                        "edway": "✓ Included",
                     },
                     # CRM Features
                     {
@@ -675,28 +675,28 @@ class ComparisonView(TemplateView):
                         "edvisor": "Basic",
                         "ams4you": "3 stages",
                         "fidelo": "Basic",
-                        "sintra": "✓ 8 customizable stages",
+                        "edway": "✓ 8 customizable stages",
                     },
                     {
                         "feature": "Complete student history",
                         "edvisor": "✓",
                         "ams4you": "✓",
                         "fidelo": "✓",
-                        "sintra": "✓ Contact→Quote→Invoice→Enrollment",
+                        "edway": "✓ Contact→Quote→Invoice→Enrollment",
                     },
                     {
                         "feature": "Multi-currency quotations",
                         "edvisor": "Limited",
                         "ams4you": "Limited",
                         "fidelo": "Basic",
-                        "sintra": "✓ Full exchange rate tracking",
+                        "edway": "✓ Full exchange rate tracking",
                     },
                     {
                         "feature": "Course + Experience programs",
                         "edvisor": "Courses only",
                         "ams4you": "Courses only",
                         "fidelo": "Courses only",
-                        "sintra": "✓ Both types",
+                        "edway": "✓ Both types",
                     },
                     # Communication
                     {
@@ -704,21 +704,21 @@ class ComparisonView(TemplateView):
                         "edvisor": "✗",
                         "ams4you": "Extra cost",
                         "fidelo": "✗",
-                        "sintra": "✓ Twilio + Messagely",
+                        "edway": "✓ Twilio + Messagely",
                     },
                     {
                         "feature": "Email template system",
                         "edvisor": "Basic",
                         "ams4you": "Basic",
                         "fidelo": "Basic",
-                        "sintra": "✓ Full HTML + variables",
+                        "edway": "✓ Full HTML + variables",
                     },
                     {
                         "feature": "Background task processing",
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ <100ms response",
+                        "edway": "✓ <100ms response",
                     },
                     # Technical
                     {
@@ -726,21 +726,21 @@ class ComparisonView(TemplateView):
                         "edvisor": "Limited",
                         "ams4you": "Limited",
                         "fidelo": "Limited",
-                        "sintra": "✓ Full REST API",
+                        "edway": "✓ Full REST API",
                     },
                     {
                         "feature": "Self-hosting option",
                         "edvisor": "✗",
                         "ams4you": "✗",
                         "fidelo": "✗",
-                        "sintra": "✓ Open source available",
+                        "edway": "✓ Open source available",
                     },
                     {
                         "feature": "Multi-branch support",
                         "edvisor": "✓",
                         "ams4you": "✓",
                         "fidelo": "Limited",
-                        "sintra": "✓ Unlimited branches",
+                        "edway": "✓ Unlimited branches",
                     },
                 ],
             },
