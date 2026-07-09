@@ -1,0 +1,5 @@
+[build]
+buildCommand = "python manage.py collectstatic --noinput"
+
+[deploy]
+startCommand = "gunicorn config.wsgi --pythonpath src --bind 0.0.0.0:$PORT --workers 3 --threads 2"
