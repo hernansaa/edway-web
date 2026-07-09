@@ -29,31 +29,31 @@
         /* Tokens */
         :root {
             --bg:           #FFFFFF;
-            --bg-subtle:    #F8F9FB;
-            --bg-section:   #F1F5F9;
-            --border:       #E2E8F0;
-            --border-muted: #F1F5F9;
+            --bg-subtle:    #F7F8FA;
+            --bg-section:   #EEF2F5;
+            --border:       #DEE4EA;
+            --border-muted: #EEF2F5;
 
-            --text-heading: #0F1629;   /* Deep navy — authority + trust */
-            --text-body:    #475569;   /* Slate — readable, professional */
-            --text-muted:   #94A3B8;   /* Light slate */
-            --text-subtle:  #CBD5E1;
+            --text-heading: #0D1526;
+            --text-body:    #495568;
+            --text-muted:   #8F9CAF;
+            --text-subtle:  #C5D0DC;
 
-            --blue:         #2CCFE2;   /* Bright cyan — vibrant, modern */
-            --blue-hover:   #23A6B5;
-            --blue-light:   #EAFAFC;
-            --blue-border:  #C0F1F6;
-            --blue-text:    #155E75;
+            --blue:         #2CCFE2;
+            --blue-hover:   #22BCCE;
+            --blue-light:   #EDFBFD;
+            --blue-border:  #C5F1F7;
+            --blue-text:    #0E7589;
 
-            --green:        #059669;
-            --green-light:  #ECFDF5;
-            --green-border: #A7F3D0;
+            --green:        #089669;
+            --green-light:  #EBFDF5;
+            --green-border: #A5F0CF;
 
             --red-light:    #FEF2F2;
             --red-border:   #FECACA;
             --red-text:     #DC2626;
 
-            --navy-footer:  #0F172A;   /* Deep navy footer — strong, confident */
+            --navy-footer:  #0B1525;
         }
 
         /* Label / eyebrow */
@@ -122,7 +122,7 @@
             gap: 8px;
             padding: 10px 20px;
             background: var(--blue);
-            color: var(--text-heading);
+            color: #0B2B38;
             font-size: 14px;
             font-weight: 500;
             border-radius: 8px;
@@ -149,7 +149,7 @@
             white-space: nowrap;
             cursor: pointer;
         }
-        .btn-secondary:hover { border-color: #CBD5E1; color: var(--text-heading); background: var(--bg-subtle); }
+        .btn-secondary:hover { border-color: var(--text-subtle); color: var(--text-heading); background: var(--bg-subtle); }
 
         /* Nav link */
         .nav-link {
@@ -172,7 +172,7 @@
 
         /* Mockup window chrome */
         .mockup-chrome {
-            background: #F8FAFC;
+            background: var(--bg-subtle);
             border: 1px solid var(--border);
             border-radius: 12px;
             overflow: hidden;
@@ -181,14 +181,14 @@
 
         /* Subtle glow for mockup */
         .mockup-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 24px 48px -8px rgba(29,78,216,0.1);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 24px 48px -8px rgba(44,207,226,0.1);
         }
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F8F9FB; }
-        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+        ::-webkit-scrollbar-track { background: var(--bg-subtle); }
+        ::-webkit-scrollbar-thumb { background: var(--text-subtle); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
     </style>
 
     {% block extra_head %}{% endblock %}
@@ -202,7 +202,7 @@
             <!-- Logo -->
             <a href="{% url 'marketing:home' %}" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
-                    <rect width="32" height="32" rx="7" fill="#1D4ED8"/>
+                    <rect width="32" height="32" rx="7" fill="#2CCFE2"/>
                     <path d="M8 9 C22 9, 24 14, 16 16 C8 18, 10 23, 24 23" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span style="font-size:15px;font-weight:600;color:var(--text-heading);letter-spacing:-0.02em;">edway</span>
@@ -280,7 +280,7 @@
                 <div style="grid-column:span 2;">
                     <a href="{% url 'marketing:home' %}" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30">
-                            <rect width="32" height="32" rx="7" fill="#1D4ED8"/>
+                            <rect width="32" height="32" rx="7" fill="#2CCFE2"/>
                             <path d="M8 9 C22 9, 24 14, 16 16 C8 18, 10 23, 24 23" stroke="white" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         <span style="font-size:15px;font-weight:600;color:#F1F5F9;letter-spacing:-0.02em;">edway</span>

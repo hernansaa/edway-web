@@ -2,8 +2,8 @@
 <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;">
     <div>
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
-            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#EFF6FF;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#1E40AF;border:1px solid #BFDBFE;">
-                <span style="width:5px;height:5px;border-radius:50%;background:#1E40AF;display:inline-block;"></span>
+            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#EDFBFD;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#0E7589;border:1px solid #C5F1F7;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#0E7589;display:inline-block;"></span>
                 Live
             </span>
             <span style="font-size:11px;color:#64748B;">Payment tracking</span>
@@ -31,7 +31,7 @@
     </div>
     {% for inv in showcase.invoices %}
     <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:8px;padding:12px 20px;border-bottom:{% if forloop.last %}none{% else %}1px solid #F1F5F9{% endif %};align-items:center;font-size:13px;transition:background .1s;" onmouseover="this.style.background='#FAFBFC'" onmouseout="this.style.background=''">
-        <span style="color:#2563EB;font-weight:500;">{{ inv.id }}</span>
+        <span style="color:#0E7589;font-weight:500;">{{ inv.id }}</span>
         <span style="color:#0F172A;font-weight:500;">{{ inv.student }}</span>
         <span style="color:#0F172A;font-weight:600;">{{ inv.amount }}</span>
         <span>

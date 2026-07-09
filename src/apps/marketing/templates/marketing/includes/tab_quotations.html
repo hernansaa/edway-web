@@ -2,8 +2,8 @@
 <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;">
     <div>
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
-            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#EFF6FF;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#1E40AF;border:1px solid #BFDBFE;">
-                <span style="width:5px;height:5px;border-radius:50%;background:#1E40AF;display:inline-block;"></span>
+            <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:4px;background:#EDFBFD;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#0E7589;border:1px solid #C5F1F7;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#0E7589;display:inline-block;"></span>
                 Live
             </span>
             <span style="font-size:11px;color:#64748B;">Multi-currency quotations</span>
@@ -37,7 +37,7 @@
         <span>
             <span style="font-size:10px;font-weight:500;padding:3px 8px;border-radius:100px;
                 {% if q.status == 'approved' %}background:#ECFDF5;color:#059669;
-                {% elif q.status == 'sent' %}background:#EFF6FF;color:#1E40AF;
+                {% elif q.status == 'sent' %}background:#EDFBFD;color:#0E7589;
                 {% elif q.status == 'negotiating' %}background:#FEF3C7;color:#D97706;
                 {% else %}background:#F8FAFC;color:#64748B;{% endif %}">
                 {{ q.status|title }}

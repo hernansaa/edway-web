@@ -23,10 +23,10 @@
 <!-- KPI cards -->
 <div class="r3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     {% for metric in showcase.metrics %}
-    {% cycle '#F59E0B,#FBBF24' '#059669,#34D399' '#7C3AED,#A78BFA' '#2563EB,#60A5FA' '#0D9488,#2DD4BF' '#4F46E5,#818CF8' as gradient silent %}
-    {% cycle '#FFFBEB' '#ECFDF5' '#FAF5FF' '#EFF6FF' '#F0FDFA' '#EEF2FF' as icon_bg silent %}
-    {% cycle '#FEF3C7' '#A7F3D0' '#E9D5FF' '#BFDBFE' '#99F6E4' '#C7D2FE' as icon_border silent %}
-    {% cycle '#D97706' '#059669' '#7C3AED' '#2563EB' '#0D9488' '#4F46E5' as icon_color silent %}
+    {% cycle '#F59E0B,#FBBF24' '#059669,#34D399' '#7C3AED,#A78BFA' '#2CCFE2,#6EE6F9' '#0D9488,#2DD4BF' '#4F46E5,#818CF8' as gradient silent %}
+    {% cycle '#FFFBEB' '#ECFDF5' '#FAF5FF' '#EDFBFD' '#F0FDFA' '#EEF2FF' as icon_bg silent %}
+    {% cycle '#FEF3C7' '#A7F3D0' '#E9D5FF' '#C5F1F7' '#99F6E4' '#C7D2FE' as icon_border silent %}
+    {% cycle '#D97706' '#059669' '#7C3AED' '#2CCFE2' '#0D9488' '#4F46E5' as icon_color silent %}
     <div style="background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:20px;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);">
         <span style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,{{ gradient }});"></span>
         <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;">
