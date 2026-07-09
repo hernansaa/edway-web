@@ -884,15 +884,15 @@ class RequestDemoView(View):
                 message=f"""
                 Hi {name},
 
-                Thanks for your interest in Global Studies CRM!
+                Thanks for your interest in Edway!
 
                 We've received your demo request and will get back to you within 24 hours.
 
                 In the meantime, feel free to explore our documentation at:
-                https://globalstudiescrm.com/documentation/
+                https://edway.io/documentation/
 
                 Best regards,
-                Global Studies CRM Team
+                Edway Team
                 """,
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[email],
