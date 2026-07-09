@@ -32,6 +32,7 @@ Set these environment variables in Railway:
 | Variable | Value |
 |---|---|
 | `SECRET_KEY` | A random string (generate with `openssl rand -hex 32`) |
+| `DEBUG` | `0` |
 | `ALLOWED_HOSTS` | `.railway.app,yourdomain.com` |
 | `CSRF_TRUSTED_ORIGINS` | `https://*.railway.app,https://yourdomain.com` |
 
