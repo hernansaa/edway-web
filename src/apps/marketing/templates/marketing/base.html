@@ -44,6 +44,7 @@
             --blue-light:   #EDFBFD;
             --blue-border:  #C5F1F7;
             --blue-text:    #0E7589;
+            --blue-button:  #09788A;   /* White text compatible (5.2:1 AA) */
 
             --green:        #089669;
             --green-light:  #EBFDF5;
@@ -121,8 +122,8 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: var(--blue);
-            color: #0B2B38;
+            background: var(--blue-button);
+            color: #fff;
             font-size: 14px;
             font-weight: 500;
             border-radius: 8px;
@@ -131,7 +132,7 @@
             white-space: nowrap;
             cursor: pointer;
         }
-        .btn-primary:hover { background: var(--blue-hover); }
+        .btn-primary:hover { background: #076574; }
 
         /* Secondary button */
         .btn-secondary {
