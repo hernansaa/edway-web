@@ -45,7 +45,7 @@
             <div style="background:var(--bg);border:1px solid {% if plan.popular %}var(--blue){% else %}var(--border){% endif %};border-radius:14px;padding:36px;position:relative;{% if plan.popular %}box-shadow:0 0 0 4px var(--blue-light);{% endif %}">
 
                 {% if plan.badge %}
-                <div style="position:absolute;top:-14px;left:28px;background:{% if plan.popular %}var(--blue){% else %}var(--text-heading){% endif %};color:#fff;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;">
+                <div style="position:absolute;top:-14px;left:28px;background:{% if plan.popular %}var(--blue){% else %}var(--text-heading){% endif %};color:var(--text-heading);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;">
                     {{ plan.badge }}
                 </div>
                 {% endif %}
@@ -71,7 +71,7 @@
 
                 <p style="font-size:13px;color:var(--text-body);margin-bottom:28px;line-height:1.6;">{{ plan.description }}</p>
 
-                <a href="{{ plan.cta_link }}" style="display:block;text-align:center;padding:11px;border-radius:8px;font-size:14px;font-weight:500;margin-bottom:28px;text-decoration:none;transition:all 0.15s;{% if plan.popular %}background:var(--blue);color:#fff;{% else %}background:transparent;border:1px solid var(--border);color:var(--text-body);{% endif %}" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                <a href="{{ plan.cta_link }}" style="display:block;text-align:center;padding:11px;border-radius:8px;font-size:14px;font-weight:500;margin-bottom:28px;text-decoration:none;transition:all 0.15s;{% if plan.popular %}background:var(--blue);color:var(--text-heading);{% else %}background:transparent;border:1px solid var(--border);color:var(--text-body);{% endif %}" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
                     {{ plan.cta }}
                 </a>
 
@@ -110,7 +110,7 @@
 <section style="padding:72px 0;border-bottom:1px solid var(--border);background:linear-gradient(135deg, var(--bg) 0%, var(--blue-light) 100%);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
         <div style="max-width:720px;margin:0 auto;text-align:center;margin-bottom:48px;">
-            <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;">
+            <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--text-heading);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;">
                 ⭐ Your competitive advantage
             </div>
             <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-heading);margin-bottom:16px;">
