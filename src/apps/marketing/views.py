@@ -23,7 +23,7 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Edway | Student Recruitment CRM — CRM + Website, One Platform",
+"page_title": "Edway | CRM + Website + WhatsApp for Education Agencies",
 "meta_description": "Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included. Save $450/month vs other CRMs with unlimited users.",
                 "showcase": generate_showcase_data(),
                 "hero_title": "The Student Recruitment CRM That Actually Works",

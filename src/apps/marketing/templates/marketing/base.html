@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ page_title|default:"Edway | Student Recruitment CRM — CRM + Website, One Platform" }}{% endblock %}</title>
+    <title>{% block title %}{{ page_title|default:"Edway | CRM + Website + WhatsApp for Education Agencies" }}{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}{{ meta_description|default:'Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included.' }}{% endblock %}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{% block canonical %}https://edway.io{{ request.path }}{% endblock %}">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="{% block og_title %}{{ page_title|default:'Edway | Student Recruitment CRM' }}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ page_title|default:'Edway | CRM + Website + WhatsApp for Education Agencies' }}{% endblock %}">
     <meta property="og:description" content="{% block og_description %}{{ meta_description|default:'All-in-one student recruitment platform: CRM, website, WhatsApp automation, and custom development.' }}{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{% block og_url %}https://edway.io{{ request.path }}{% endblock %}">
@@ -21,7 +21,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}{{ page_title|default:'Edway | Student Recruitment CRM' }}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ page_title|default:'Edway | CRM + Website + WhatsApp for Education Agencies' }}{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ meta_description|default:'All-in-one student recruitment platform: CRM, website, WhatsApp automation, and custom development.' }}{% endblock %}">
     <meta name="twitter:image" content="{% static 'img/edway-og.png' %}">
 
