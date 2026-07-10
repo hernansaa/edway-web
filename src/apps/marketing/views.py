@@ -73,7 +73,7 @@ class HomeView(TemplateView):
                     },
                     {
                         "label": "Yearly plan",
-                        "value": "50% off all plans",
+                        "value": "$474/year — 50% off ($39.50/mo)",
                         "highlight": True,
                     },
                     {
@@ -378,22 +378,22 @@ class PricingView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Pricing | Edway — From $299/Month, Unlimited Users",
-"meta_description": "Edway pricing starts at $299/month with unlimited users. Professional CRM, public website, dedicated infrastructure, and custom development included. No per-seat pricing.",
+"page_title": "Pricing | Edway — From $79/Month",
+"meta_description": "Edway pricing starts at $79/month for 2 users. Professional CRM, public website, dedicated infrastructure, and custom development included. Flexible per-user pricing.",
                 "plans": [
                     {
                         "name": "Professional",
-                        "price": "$299",
-                        "price_annual": "$2,990",
-                        "period": "per month",
-                        "period_annual": "per year",
-                        "setup_fee": "$499",
+                        "price": "$79",
+                        "price_annual": "$474",
+                        "period": "per month (2 users included)",
+                        "period_annual": "per year ($39.50/mo)",
+                        "setup_fee": "$0",
                         "setup_fee_waived": True,
-                        "savings_annual": "$598",
-                        "description": "Dedicated server instance. Perfect for agencies managing 50-200 students per month.",
+                        "savings_annual": "$474",
+                        "description": "Ideal for small to mid-size agencies. Includes everything you need to run and grow your agency.",
                         "features": [
+                            "2 users included — $35/mo per extra user",
                             "Dedicated server (4 vCPU, 8GB RAM)",
-                            "Unlimited users & team members",
                             "Unlimited students & quotations",
                             "Full agency website included",
                             "Blog system with SEO optimization",
