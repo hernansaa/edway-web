@@ -432,7 +432,7 @@
                     We built this because we used the most popular CRMs in the market.
                 </h2>
                 <p style="font-size:15px;color:var(--text-body);line-height:1.75;margin-bottom:32px;">
-                    We ran agencies before we wrote a single line of code. That experience taught us exactly what works — and what doesn't. So we built the platform we always wished existed.
+                    We ran agencies before launching Edway. That experience taught us exactly what works — and what doesn't. So we built the platform we always wished existed.
                 </p>
 
                 <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px;">
@@ -440,25 +440,25 @@
                         <div style="width:20px;height:20px;border-radius:50%;background:var(--green-light);border:1px solid var(--green-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">WhatsApp included. Not a $50/month add-on.</span>
+                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Leads flow in automatically from your website, forms, and ads.</span>
                     </div>
                     <div class="check-item">
                         <div style="width:20px;height:20px;border-radius:50%;background:var(--green-light);border:1px solid var(--green-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Unlimited users at $99/mo. Not $50 per seat.</span>
+                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Quotes, invoices, and payments — interconnected, no spreadsheets needed.</span>
                     </div>
                     <div class="check-item">
                         <div style="width:20px;height:20px;border-radius:50%;background:var(--green-light);border:1px solid var(--green-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Self-hostable. Own your data, own your stack.</span>
+                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Automated WhatsApp and email sequences — every enquiry gets a timely follow-up.</span>
                     </div>
                     <div class="check-item">
                         <div style="width:20px;height:20px;border-radius:50%;background:var(--green-light);border:1px solid var(--green-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Forms submit in &lt;100ms, not 2–5 seconds.</span>
+                        <span style="font-size:14px;color:var(--text-heading);font-weight:500;">Complete student history from first click to enrollment — always one click away.</span>
                     </div>
                 </div>
 
@@ -471,18 +471,16 @@
             <!-- Quick comparison table -->
             <div class="r-compare-table" style="overflow-x:auto;">
             <div class="r-compare-inner" style="display:flex;flex-direction:column;gap:8px;">
-                <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px;padding:10px 16px;">
+                <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px;padding:10px 16px;">
                     <span style="font-size:11px;color:var(--text-muted);font-weight:500;"></span>
-                    <span style="font-size:11px;color:var(--text-muted);font-weight:500;text-align:center;">CRM A</span>
-                    <span style="font-size:11px;color:var(--text-muted);font-weight:500;text-align:center;">CRM B</span>
+                    <span style="font-size:11px;color:var(--text-muted);font-weight:500;text-align:center;">Other CRMs</span>
                     <span style="font-size:11px;color:var(--blue);font-weight:600;text-align:center;">Edway</span>
                 </div>
                 {% for row in comparison_rows %}
-                <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px;padding:12px 16px;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);align-items:center;">
+                <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:8px;padding:12px 16px;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);align-items:center;">
                     <span style="font-size:13px;color:var(--text-body);">{{ row.label }}</span>
-                    <span style="font-size:12px;color:var(--text-muted);text-align:center;">&mdash;</span>
-                    <span style="font-size:12px;color:var(--text-muted);text-align:center;">&mdash;</span>
-                    <span style="font-size:12px;text-align:center;{% if row.highlight %}color:var(--green);font-weight:600;{% else %}color:var(--text-body);{% endif %}">{{ row.edway }}</span>
+                    <span style="font-size:12px;color:var(--text-muted);text-align:center;">{% if row.label == "Yearly plan" %}&mdash;{% else %}&mdash;{% endif %}</span>
+                    <span style="font-size:12px;text-align:center;{% if row.highlight %}color:var(--green);font-weight:600;{% else %}color:var(--text-body);{% endif %}">{{ row.value }}</span>
                 </div>
                 {% endfor %}
             </div>
