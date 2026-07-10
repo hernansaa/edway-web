@@ -63,12 +63,12 @@ class HomeView(TemplateView):
                 "comparison_rows": [
                     {
                         "label": "Starting price",
-                        "value": "<s style=\"color:#EF4444;\">$79/mo</s> <span style=\"color:var(--green);font-weight:700;\">$39.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
+                        "value": "<s style=\"color:#EF4444;\">$89/mo</s> <span style=\"color:var(--green);font-weight:700;\">$44.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
                         "label": "Additional users",
-                        "value": "<s style=\"color:#EF4444;\">$35/mo</s> <span style=\"color:var(--green);font-weight:700;\">$17.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
+                        "value": "<s style=\"color:#EF4444;\">$39/mo</s> <span style=\"color:var(--green);font-weight:700;\">$19.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
@@ -373,21 +373,21 @@ class PricingView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Pricing | Edway — From $79/Month",
-"meta_description": "Edway pricing starts at $79/month for 2 users. Professional CRM, public website, dedicated infrastructure, and custom development included. Flexible per-user pricing.",
+"page_title": "Pricing | Edway — From $89/Month",
+"meta_description": "Edway pricing starts at $89/month for 2 users. Professional CRM, public website, dedicated infrastructure, and custom development included. Flexible per-user pricing.",
                 "plans": [
                     {
                         "name": "Professional",
-                        "price": "$79",
-                        "price_annual": "$474",
+                        "price": "$89",
+                        "price_annual": "$534",
                         "period": "per month (2 users included)",
-                        "period_annual": "per year ($39.50/mo)",
+                        "period_annual": "per year ($44.50/mo)",
                         "setup_fee": "$0",
                         "setup_fee_waived": True,
-                        "savings_annual": "$474",
+                        "savings_annual": "$534",
                         "description": "Ideal for small to mid-size agencies. Includes everything you need to run and grow your agency.",
                         "features": [
-                            "2 users included — $35/mo per extra user",
+                            "2 users included — $39/mo per extra user",
                             "Dedicated server (4 vCPU, 8GB RAM)",
                             "Unlimited students & quotations",
                             "Full agency website included",
@@ -607,14 +607,14 @@ class ComparisonView(TemplateView):
                         "edvisor": "~$549",
                         "ams4you": "~€320",
                         "fidelo": "~$275",
-                        "edway": "$79",
+                        "edway": "$89",
                     },
                     {
                         "feature": "User limits",
                         "edvisor": "Per seat pricing",
                         "ams4you": "Per seat pricing",
                         "fidelo": "Per seat pricing",
-                        "edway": "2 included, $35/mo extra",
+                        "edway": "2 included, $39/mo extra",
                     },
                     {
                         "feature": "Student/quotation limits",
