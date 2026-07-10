@@ -73,7 +73,7 @@ class HomeView(TemplateView):
                     },
                     {
                         "label": "Yearly plan",
-                        "value": "$474/year — 50% off ($39.50/mo)",
+                        "value": "From $19.75/user/mo — 50% off",
                         "highlight": True,
                     },
                     {
