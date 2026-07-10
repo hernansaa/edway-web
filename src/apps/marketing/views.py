@@ -63,12 +63,12 @@ class HomeView(TemplateView):
                 "comparison_rows": [
                     {
                         "label": "Starting price",
-                        "value": "<s style=\"color:#EF4444;\">$79/mo</s> <span style=\"color:var(--green);font-weight:700;\">$39.50/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
+                        "value": "<s style=\"color:#EF4444;\">$79/mo</s> <span style=\"color:var(--green);font-weight:700;\">$39.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
                         "label": "Additional users",
-                        "value": "<s style=\"color:#EF4444;\">$35/mo</s> <span style=\"color:var(--green);font-weight:700;\">$17.50/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
+                        "value": "<s style=\"color:#EF4444;\">$35/mo</s> <span style=\"color:var(--green);font-weight:700;\">$17.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
