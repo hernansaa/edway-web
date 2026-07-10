@@ -62,13 +62,18 @@ class HomeView(TemplateView):
                 ],
                 "comparison_rows": [
                     {
-                        "label": "Price / 5 users",
-                        "value": "$99/mo",
+                        "label": "Starting price",
+                        "value": "$79/mo (2 users included)",
+                        "highlight": True,
+                    },
+                    {
+                        "label": "Additional users",
+                        "value": "$35/mo each",
                         "highlight": True,
                     },
                     {
                         "label": "Yearly plan",
-                        "value": "50% off — $49.50/mo",
+                        "value": "50% off all plans",
                         "highlight": True,
                     },
                     {
@@ -82,18 +87,8 @@ class HomeView(TemplateView):
                         "highlight": True,
                     },
                     {
-                        "label": "Facebook ads",
-                        "value": "Native webhook",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Self-hosting",
-                        "value": "Free / Open source",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Unlimited users",
-                        "value": "Yes",
+                        "label": "Dedicated server",
+                        "value": "100% per client",
                         "highlight": True,
                     },
                 ],
@@ -617,14 +612,14 @@ class ComparisonView(TemplateView):
                         "edvisor": "~$549",
                         "ams4you": "~€320",
                         "fidelo": "~$275",
-                        "edway": "$299",
+                        "edway": "$79",
                     },
                     {
                         "feature": "User limits",
                         "edvisor": "Per seat pricing",
                         "ams4you": "Per seat pricing",
                         "fidelo": "Per seat pricing",
-                        "edway": "✓ Unlimited",
+                        "edway": "2 included, $35/mo extra",
                     },
                     {
                         "feature": "Student/quotation limits",
