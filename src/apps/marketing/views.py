@@ -63,17 +63,12 @@ class HomeView(TemplateView):
                 "comparison_rows": [
                     {
                         "label": "Starting price",
-                        "value": "$79/mo (2 users included)",
+                        "value": "<s style=\"color:#EF4444;\">$79/mo</s> <span style=\"color:var(--green);font-weight:700;\">$39.50/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
                         "label": "Additional users",
-                        "value": "$35/mo each",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Yearly plan",
-                        "value": "<s>$79/mo</s> <s>$39.50/user/mo</s> $19.75/user/mo — 50% off",
+                        "value": "<s style=\"color:#EF4444;\">$35/mo</s> <span style=\"color:var(--green);font-weight:700;\">$17.50/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">with annual billing</span>",
                         "highlight": True,
                     },
                     {
