@@ -153,7 +153,7 @@ class FeaturesView(TemplateView):
                         "features": [
                             {
                                 "title": "Dual Quotation Types",
-                                "description": "Support both COURSE quotations (language schools) and EXPERIENCE/PROGRAM quotations (work & study, internships) in one unified system.",
+                                "description": "Handle school quotations and customized program quotations side by side — all within a single, unified system.",
                             },
                             {
                                 "title": "Automatic Seasonal Pricing",
