@@ -351,7 +351,7 @@ class FeaturesView(TemplateView):
                         "features": [
                             {
                                 "title": "Custom Feature Development",
-                                "description": "Need a specific integration or workflow? We build custom features tailored to your agency's needs—included in your subscription.",
+                                "description": "Need a specific integration or workflow? We build custom features tailored to your agency's unique needs.",
                             },
                             {
                                 "title": "API Integrations",
