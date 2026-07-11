@@ -239,7 +239,7 @@ class FeaturesView(TemplateView):
                         "features": [
                             {
                                 "title": "WhatsApp Integration",
-                                "description": "Built-in WhatsApp messaging with Twilio (paid) or Messagely (free self-hosted). Template-based messages with dynamic variables.",
+                                "description": "Built-in WhatsApp messaging with automated templates. Send quotes, reminders, and updates directly from the platform.",
                             },
                             {
                                 "title": "Email Template System",
@@ -411,7 +411,7 @@ class PricingView(TemplateView):
                             "Lead management & pipeline (8 statuses)",
                             "Multi-currency quotation system",
                             "Invoice & payment tracking",
-                            "WhatsApp automation (Twilio/Messagely)",
+                            "WhatsApp automation (included)",
                             "Email template system with variables",
                             "Landing page builder (unlimited)",
                             "Facebook lead ads webhook integration",
@@ -449,7 +449,7 @@ class PricingView(TemplateView):
                             "Multi-currency quotation system",
                             "Invoice & payment tracking",
                             "Accounting module with transactions",
-                            "WhatsApp automation (Twilio/Messagely)",
+                            "WhatsApp automation (included)",
                             "Email template system with variables",
                             "Landing page builder (unlimited)",
                             "Facebook lead ads webhook integration",
@@ -491,7 +491,7 @@ class PricingView(TemplateView):
                             "Multi-currency quotation system",
                             "Invoice & payment tracking",
                             "Accounting module with transactions",
-                            "WhatsApp automation (Twilio/Messagely)",
+                            "WhatsApp automation (included)",
                             "Email template system with variables",
                             "Landing page builder (unlimited)",
                             "Facebook lead ads webhook integration",
@@ -702,7 +702,7 @@ class ComparisonView(TemplateView):
                         "edvisor": "✗",
                         "ams4you": "Extra cost",
                         "fidelo": "✗",
-                        "edway": "✓ Twilio + Messagely",
+                        "edway": "✓ Built-in",
                     },
                     {
                         "feature": "Email template system",
