@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib import admin
 from django.http import HttpRequest, HttpResponse
 from django.urls import include, path
 from pathlib import Path
@@ -17,6 +18,7 @@ def serve_static_file(filepath: str):
 
 
 urlpatterns = [
+    path("admin/", admin.site.urls),
     path("robots.txt", serve_static_file("robots.txt")),
     path("sitemap.xml", serve_static_file("sitemap.xml")),
     path("", include("apps.marketing.urls")),

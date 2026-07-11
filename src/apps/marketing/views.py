@@ -4,10 +4,10 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import redirect
-from django.views import View
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 
 from .demo_data import generate_showcase_data
+from .models import DemoRequest
 
 logger = logging.getLogger(__name__)
 
@@ -641,6 +641,14 @@ class RequestDemoView(View):
             company = request.POST.get("company", "")
             phone = request.POST.get("phone", "")
             message = request.POST.get("message", "")
+
+            DemoRequest.objects.create(
+                name=name,
+                email=email,
+                company=company,
+                phone=phone,
+                message=message,
+            )
 
             # Send notification email to sales team
             send_mail(

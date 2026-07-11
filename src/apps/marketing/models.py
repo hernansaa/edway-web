@@ -1,15 +1,23 @@
-"""
-Marketing app models.
+from django.db import models
 
-Currently, this app doesn't require any database models as it's purely
-a presentation layer for the marketing website. All content is managed
-through view context data.
 
-Future enhancements could include:
-- DemoRequest model to track demo requests in database
-- Newsletter subscription model
-- Landing page A/B test tracking
-- Conversion analytics
-"""
+class DemoRequest(models.Model):
+    """
+    Demo request submissions from the marketing website.
+    """
 
-# No models needed for now
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    company = models.CharField(max_length=200, blank=True)
+    phone = models.CharField(max_length=50, blank=True)
+    message = models.TextField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "demo request"
+        verbose_name_plural = "demo requests"
+
+    def __str__(self):
+        return f"{self.name} ({self.company}) — {self.email}"
