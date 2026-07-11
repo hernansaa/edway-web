@@ -247,7 +247,7 @@ class FeaturesView(TemplateView):
                             },
                             {
                                 "title": "Background Task Processing",
-                                "description": "Emails and WhatsApp messages sent in background queue. Form submissions return in <100ms for instant user feedback. Production-ready with automatic retries.",
+                                "description": "Forms, emails, and WhatsApp messages process instantly in the background. Your team never waits — students get responses in seconds.",
                             },
                             {
                                 "title": "Automated Welcome Messages",
