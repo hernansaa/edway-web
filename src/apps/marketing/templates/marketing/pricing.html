@@ -2,76 +2,104 @@
 
 {% block content %}
 
+<div x-data="{ billing: 'annual' }">
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section style="padding:72px 0 56px;border-bottom:1px solid var(--border);background:var(--bg);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
-        <p class="edway-label" style="margin-bottom:14px;">Complete all-in-one platform</p>
-        <h1 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);max-width:680px;margin-bottom:16px;">
-            CRM + Website + Custom Features.<br>One price.
-        </h1>
-        <p style="font-size:17px;color:var(--text-body);max-width:620px;line-height:1.75;margin-bottom:32px;">
-            Unlike competitors who only sell a CRM, Edway includes everything: professional public website, powerful backend, dedicated server infrastructure, and the flexibility to build custom features tailored to your agency. <strong style="color:var(--text-heading);">There's nobody like us.</strong>
-        </p>
+        <div style="max-width:680px;margin:0 auto;text-align:center;">
+            <p class="edway-label" style="margin-bottom:14px;">Simple, transparent pricing</p>
+            <h1 style="font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);margin-bottom:16px;">
+                One plan. Everything included.
+            </h1>
+            <p style="font-size:17px;color:var(--text-body);max-width:560px;margin:0 auto 32px;line-height:1.75;">
+                CRM, public website, automation, and custom development&mdash;all in one subscription. No hidden fees, no per-feature pricing, no surprises.
+            </p>
 
-        <!-- Billing toggle -->
-        <div style="display:inline-flex;align-items:center;gap:12px;padding:4px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:100px;" x-data="{ annual: false }">
-            <button @click="annual = false" :style="!annual ? 'background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,0.05);' : ''" style="padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;transition:all 0.15s;border:none;cursor:pointer;" :style="!annual ? 'color: var(--text-heading);' : 'color: var(--text-muted);'">
-                Monthly
-            </button>
-            <button @click="annual = true" :style="annual ? 'background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,0.05);' : ''" style="padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;transition:all 0.15s;border:none;cursor:pointer;position:relative;" :style="annual ? 'color: var(--text-heading);' : 'color: var(--text-muted);'">
-                Annual
-                <span style="position:absolute;top:-8px;right:-8px;background:var(--green);color:#fff;font-size:9px;font-weight:600;padding:2px 6px;border-radius:100px;letter-spacing:0.02em;">SAVE</span>
-            </button>
+            <!-- Billing toggle -->
+            <div style="display:inline-flex;align-items:center;gap:12px;padding:4px;background:var(--bg-subtle);border:1px solid var(--border);border-radius:100px;">
+                <button @click="billing = 'monthly'"
+                        :style="{ background: billing === 'monthly' ? 'var(--bg)' : 'transparent', boxShadow: billing === 'monthly' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none', color: billing === 'monthly' ? 'var(--text-heading)' : 'var(--text-muted)' }"
+                        style="padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;transition:all 0.15s;border:none;cursor:pointer;font-family:inherit;">
+                    Monthly
+                </button>
+                <button @click="billing = 'annual'"
+                        :style="{ background: billing === 'annual' ? 'var(--bg)' : 'transparent', boxShadow: billing === 'annual' ? '0 1px 2px rgba(0,0,0,0.05)' : 'none', color: billing === 'annual' ? 'var(--text-heading)' : 'var(--text-muted)' }"
+                        style="padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;transition:all 0.15s;border:none;cursor:pointer;font-family:inherit;position:relative;">
+                    Annual
+                    <span style="position:absolute;top:-8px;right:-20px;background:var(--green);color:#fff;font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;letter-spacing:0.02em;white-space:nowrap;">Save 50%</span>
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Plans -->
-<section style="padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg);" x-data="{ annual: false }">
+<!-- ─── PLANS ─────────────────────────────────────────────────── -->
+<section style="padding:56px 0;border-bottom:1px solid var(--border);background:var(--bg);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
-        
-        <!-- All-in-one callout -->
-        <div style="max-width:760px;margin:0 auto 48px;text-align:center;padding:24px 28px;background:var(--blue-light);border:1px solid var(--blue-border);border-radius:12px;">
-            <p style="font-size:15px;color:var(--blue-text);line-height:1.75;margin-bottom:12px;">
-                <strong style="font-weight:600;font-size:16px;">Every plan includes: CRM + Public Website + Dedicated Server</strong>
-            </p>
-            <p style="font-size:13px;color:var(--blue-text);line-height:1.6;">
-                $499 setup fee waived when you pay annually. Includes full onboarding, data migration, team training, and website deployment. <span style="font-weight:500;">Custom features available on all plans—just ask.</span>
-            </p>
-        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3" style="gap:20px;">
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap:24px;max-width:920px;margin:0 auto;">
 
             {% for plan in plans %}
-            <div style="background:var(--bg);border:1px solid {% if plan.popular %}var(--blue){% else %}var(--border){% endif %};border-radius:14px;padding:36px;position:relative;{% if plan.popular %}box-shadow:0 0 0 4px var(--blue-light);{% endif %}">
+            <div style="background:var(--bg);border:1px solid {% if plan.popular %}var(--blue){% else %}var(--border){% endif %};border-radius:14px;padding:40px 36px;position:relative;{% if plan.popular %}box-shadow:0 0 0 4px var(--blue-light);{% endif %}">
 
                 {% if plan.badge %}
-                <div style="position:absolute;top:-14px;left:28px;background:{% if plan.popular %}var(--blue){% else %}var(--text-heading){% endif %};color:var(--text-heading);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;">
+                <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--text-heading);font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:5px 14px;border-radius:100px;white-space:nowrap;">
                     {{ plan.badge }}
                 </div>
                 {% endif %}
 
-                <p style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:16px;letter-spacing:0.02em;">{{ plan.name }}</p>
-                
-                <!-- Price display with toggle -->
-                <div x-show="!annual" style="margin-bottom:8px;">
-                    <div style="display:flex;align-items:baseline;gap:4px;">
-                        <span style="font-size:52px;font-weight:700;letter-spacing:-0.04em;color:var(--text-heading);">{{ plan.price }}</span>
-                        <span style="font-size:14px;color:var(--text-muted);">/ {{ plan.period }}</span>
+                <p style="font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:24px;letter-spacing:0.02em;text-align:center;">{{ plan.name }}</p>
+
+                <!-- Pricing -->
+                <div style="text-align:center;margin-bottom:24px;">
+
+                {% if plan.price_monthly %}
+
+                    <!-- Annual (default) -->
+                    <div x-show="billing === 'annual'">
+                        <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-bottom:8px;">
+                            <span style="font-size:52px;font-weight:700;letter-spacing:-0.04em;color:var(--text-heading);line-height:1;">{{ plan.price_annual_first_year }}</span>
+                            <span style="font-size:14px;color:var(--text-muted);padding-bottom:6px;">/month</span>
+                        </div>
+                        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:100px;margin-bottom:6px;">
+                            <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            50% off first year
+                        </div>
+                        <p style="font-size:12px;color:var(--text-muted);">
+                            Then {{ plan.price_annual_ongoing }}/mo from year 2
+                        </p>
                     </div>
-                    <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">+ $499 setup fee</p>
+
+                    <!-- Monthly -->
+                    <div x-show="billing === 'monthly'">
+                        <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-bottom:8px;">
+                            <span style="font-size:52px;font-weight:700;letter-spacing:-0.04em;color:var(--text-heading);line-height:1;">{{ plan.price_monthly }}</span>
+                            <span style="font-size:14px;color:var(--text-muted);padding-bottom:6px;">/month</span>
+                        </div>
+                        <p style="font-size:13px;color:var(--text-body);">{{ plan.period }}</p>
+                    </div>
+
+                {% else %}
+
+                    <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-bottom:8px;">
+                        <span style="font-size:44px;font-weight:700;letter-spacing:-0.04em;color:var(--text-heading);line-height:1;">Custom</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--text-body);">{{ plan.period }}</p>
+
+                {% endif %}
                 </div>
 
-                <div x-show="annual" style="margin-bottom:8px;">
-                    <div style="display:flex;align-items:baseline;gap:4px;">
-                        <span style="font-size:52px;font-weight:700;letter-spacing:-0.04em;color:var(--text-heading);">{{ plan.price_annual }}</span>
-                        <span style="font-size:14px;color:var(--text-muted);">/ {{ plan.period_annual }}</span>
-                    </div>
-                    <p style="font-size:12px;color:var(--green);font-weight:500;margin-top:4px;">✓ Setup fee waived · Save {{ plan.savings_annual }}</p>
+                {% if plan.price_monthly %}
+                <div style="text-align:center;margin-bottom:20px;">
+                    <span x-show="billing === 'monthly'" style="font-size:12px;color:var(--text-muted);">{{ plan.extra_user_monthly }}/mo per additional user</span>
+                    <span x-show="billing === 'annual'" style="font-size:12px;color:var(--text-muted);">{{ plan.extra_user_annual_first_year }}/mo per additional user first year, then {{ plan.extra_user_annual_ongoing }}/mo</span>
                 </div>
+                {% endif %}
 
-                <p style="font-size:13px;color:var(--text-body);margin-bottom:28px;line-height:1.6;">{{ plan.description }}</p>
+                <p style="font-size:14px;color:var(--text-body);margin-bottom:28px;line-height:1.65;text-align:center;">{{ plan.description }}</p>
 
-                <a href="{{ plan.cta_link }}" style="display:block;text-align:center;padding:11px;border-radius:8px;font-size:14px;font-weight:500;margin-bottom:28px;text-decoration:none;transition:all 0.15s;{% if plan.popular %}background:var(--blue);color:var(--text-heading);{% else %}background:transparent;border:1px solid var(--border);color:var(--text-body);{% endif %}" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                <a href="{% url 'marketing:demo' %}" style="display:block;text-align:center;padding:13px;border-radius:8px;font-size:14px;font-weight:600;margin-bottom:32px;text-decoration:none;transition:all 0.15s;{% if plan.popular %}background:var(--blue);color:var(--text-heading);{% else %}background:transparent;border:1px solid var(--border);color:var(--text-body);{% endif %}" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
                     {{ plan.cta }}
                 </a>
 
@@ -85,183 +113,30 @@
                 </ul>
             </div>
             {% endfor %}
+
         </div>
 
-        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:32px;">All plans include 30-day money-back guarantee · No long-term contracts</p>
-
-        <!-- Not sure yet? -->
-        <div style="margin-top:48px;padding:32px;background:#fff;border:2px solid var(--green);border-radius:14px;text-align:center;">
-            <div style="display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px;">
-                Not sure yet?
-            </div>
-            <h3 style="font-size:20px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">Try the full Live Demo first — it's free.</h3>
-            <p style="font-size:15px;color:var(--text-body);max-width:560px;margin:0 auto 24px;line-height:1.7;">
-                Explore the entire CRM with real data. Pipeline, quotations, invoices, dashboard — see exactly how Edway works before you commit.
-            </p>
-            <a href="https://app.edway.io/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;font-size:15px;">
-                Launch Live Demo
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-        </div>
+        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:40px;">3-month free trial &middot; No credit card required &middot; Cancel anytime</p>
     </div>
 </section>
 
-<!-- Custom Development -->
-<section style="padding:72px 0;border-bottom:1px solid var(--border);background:linear-gradient(135deg, var(--bg) 0%, var(--blue-light) 100%);">
-    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
-        <div style="max-width:720px;margin:0 auto;text-align:center;margin-bottom:48px;">
-            <div style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--text-heading);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;">
-                ⭐ Your competitive advantage
-            </div>
-            <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-heading);margin-bottom:16px;">
-                Need custom features?<br>We build them for you.
-            </h2>
-            <p style="font-size:17px;color:var(--text-body);line-height:1.75;">
-                <strong style="color:var(--text-heading);">This is what makes Edway different from every other CRM.</strong> Every agency has unique workflows. We don't force you to adapt—we adapt the platform to you. Custom integrations, automations, reports, or entirely new modules tailored to your competitive advantage.
-            </p>
-        </div>
+</div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2" style="gap:20px;margin-bottom:48px;">
-            <div style="background:#fff;border:1px solid var(--blue-border);border-radius:14px;padding:32px;">
-                <div style="width:44px;height:44px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <h3 style="font-size:17px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">Custom Integrations</h3>
-                <p style="font-size:14px;color:var(--text-body);line-height:1.7;margin-bottom:16px;">
-                    Connect Edway to your existing tools: accounting software, payment gateways, marketing platforms, or internal systems. We build the API integrations you need.
-                </p>
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Payment gateway APIs (Stripe, PayPal)
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Accounting software (QuickBooks, Xero)
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Marketing tools (Mailchimp, HubSpot)
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Internal ERP or legacy systems
-                    </li>
-                </ul>
-            </div>
-
-            <div style="background:#fff;border:1px solid var(--blue-border);border-radius:14px;padding:32px;">
-                <div style="width:44px;height:44px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6m0 4v10"/><path d="M17 7l-5-5-5 5"/><circle cx="12" cy="16" r="1"/></svg>
-                </div>
-                <h3 style="font-size:17px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">Workflow Automation</h3>
-                <p style="font-size:14px;color:var(--text-body);line-height:1.7;margin-bottom:16px;">
-                    Automate your unique processes with custom rules, triggers, and actions. If you do it manually today, we can automate it tomorrow.
-                </p>
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Custom lead scoring algorithms
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Automatic task assignment rules
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Multi-step approval workflows
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Scheduled reports & notifications
-                    </li>
-                </ul>
-            </div>
-
-            <div style="background:#fff;border:1px solid var(--blue-border);border-radius:14px;padding:32px;">
-                <div style="width:44px;height:44px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                </div>
-                <h3 style="font-size:17px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">Custom Reports & Dashboards</h3>
-                <p style="font-size:14px;color:var(--text-body);line-height:1.7;margin-bottom:16px;">
-                    Need specific KPIs or metrics? We build custom reports and dashboards that show exactly what you need to run your business.
-                </p>
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Commission tracking & calculations
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Custom financial reports
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Performance analytics dashboards
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Export formats (PDF, Excel, CSV)
-                    </li>
-                </ul>
-            </div>
-
-            <div style="background:#fff;border:1px solid var(--blue-border);border-radius:14px;padding:32px;">
-                <div style="width:44px;height:44px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                <h3 style="font-size:17px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">New Modules & Features</h3>
-                <p style="font-size:14px;color:var(--text-body);line-height:1.7;margin-bottom:16px;">
-                    Have a unique requirement? We build entirely new modules that become part of your platform. Your competitive advantage, coded.
-                </p>
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Partner portal for schools
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Student self-service portal
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Document management system
-                    </li>
-                    <li style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-body);">
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Custom booking/scheduling tools
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="background:#fff;border:2px solid var(--blue);border-radius:14px;padding:36px;text-align:center;">
-            <h3 style="font-size:19px;font-weight:600;color:var(--text-heading);margin-bottom:12px;">How it works</h3>
-            <p style="font-size:15px;color:var(--text-body);line-height:1.75;max-width:680px;margin:0 auto 24px;">
-                Tell us what you need. We scope the work, provide a fixed quote, and build it as part of your platform. No separate tools, no integrations to maintain—it's all one system. <strong style="color:var(--text-heading);">This is included in your subscription, not a separate product.</strong>
-            </p>
-            <a href="{% url 'marketing:demo' %}" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;font-size:15px;">
-                Discuss custom features
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- Infrastructure benefits -->
+{% comment %}
+<!-- ─── INFRASTRUCTURE ─────────────────────────────────────────── -->
 <section style="padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg-subtle);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
-        <div style="max-width:640px;margin-bottom:56px;">
-            <p class="edway-label" style="margin-bottom:14px;">Why dedicated infrastructure matters</p>
+        <div style="max-width:640px;margin:0 auto;text-align:center;margin-bottom:48px;">
+            <p class="edway-label" style="margin-bottom:14px;">Infrastructure</p>
             <h2 style="font-size:clamp(26px,3vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.2;color:var(--text-heading);margin-bottom:16px;">
-                Your agency deserves its own server.
+                Your agency on its own dedicated server.
             </h2>
             <p style="font-size:16px;color:var(--text-body);line-height:1.75;">
-                Competitors cram hundreds of agencies onto shared infrastructure. We give you a dedicated server from day one—predictable performance, isolated resources, and complete data sovereignty.
+                Other platforms cram hundreds of agencies onto shared infrastructure. With Edway Enterprise, you get a fully dedicated server environment, not a slice of someone else's machine.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2" style="gap:16px;">
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap:16px;max-width:800px;margin:0 auto;">
             {% for benefit in infrastructure_benefits %}
             <div style="padding:28px;background:var(--bg);border:1px solid var(--border);border-radius:12px;">
                 <h3 style="font-size:15px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">{{ benefit.title }}</h3>
@@ -271,51 +146,10 @@
         </div>
     </div>
 </section>
+{% endcomment %}
 
-<!-- Comparison table -->
+<!-- ─── FAQ ────────────────────────────────────────────────────── -->
 <section style="padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg);">
-    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
-        <p class="edway-label" style="margin-bottom:32px;">How we compare</p>
-
-        <div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--bg);">
-            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;background:var(--bg-subtle);border-bottom:1px solid var(--border);">
-                <div style="padding:14px 20px;"></div>
-                <div style="padding:14px 16px;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);">CRM A</div>
-                <div style="padding:14px 16px;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);">CRM B</div>
-                <div style="padding:14px 16px;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);">CRM C</div>
-                <div style="padding:14px 16px;text-align:center;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);">Edway</div>
-            </div>
-
-            {% for competitor in competitor_comparison %}
-            <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;border-bottom:1px solid var(--border-muted);{% if forloop.last %}border-bottom:none;{% endif %}align-items:center;{% if forloop.counter|divisibleby:2 %}background:var(--bg-subtle);{% else %}background:var(--bg);{% endif %}">
-                <div style="padding:14px 20px;font-size:13px;color:var(--text-body);font-weight:500;">
-                    {% if forloop.first %}Base price (5 users)
-                    {% elif forloop.counter == 2 %}Per additional user
-                    {% elif forloop.counter == 3 %}Total (5 users)
-                    {% elif forloop.counter == 4 %}Infrastructure
-                    {% else %}Performance{% endif %}
-                </div>
-                <div style="padding:14px 16px;text-align:center;font-size:13px;color:var(--text-muted);">
-                    {% if forloop.first %}{{ competitor.base_price }}
-                    {% elif forloop.counter == 2 %}{{ competitor.per_user }}
-                    {% elif forloop.counter == 3 %}{{ competitor.total_5_users }}
-                    {% elif forloop.counter == 4 %}{{ competitor.infrastructure }}
-                    {% else %}{{ competitor.performance }}{% endif %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div style="margin-top:32px;padding:24px;background:var(--blue-light);border:1px solid var(--blue-border);border-radius:12px;">
-            <p style="font-size:14px;color:var(--blue-text);line-height:1.75;">
-                <strong style="font-weight:600;">Why Edway costs more:</strong> Dedicated servers aren't cheap—but they're worth it. You get guaranteed performance, isolated email sending (better deliverability), and the ability to scale resources instantly. Competitors save money by cramming agencies onto shared infrastructure. We don't.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section style="padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg-subtle);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
         <div class="grid grid-cols-1 md:grid-cols-2" style="gap:48px;">
             <div>
@@ -324,41 +158,50 @@
             </div>
             <div style="display:flex;flex-direction:column;gap:24px;">
                 <div style="border-bottom:1px solid var(--border);padding-bottom:24px;">
-                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">What's included in the setup fee?</h3>
-                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Full server provisioning, data migration from your current system, team onboarding calls, and custom configuration. If you pay annually, we waive the entire $499 fee.</p>
+                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">What's included in the monthly price?</h3>
+                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Everything listed in the plan. CRM, public website, WhatsApp and email automation, and all the features shown above. No hidden fees, no per-module pricing.</p>
                 </div>
                 <div style="border-bottom:1px solid var(--border);padding-bottom:24px;">
-                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">Can I upgrade or downgrade my plan?</h3>
-                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Yes. Upgrades are instant (we scale your server resources in real-time). Downgrades take effect at your next billing cycle. No migration required—it's the same instance.</p>
+                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">How does the annual discount work?</h3>
+                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Pay annually and get 50% off your first year. From year two onward, you receive a 20% lifetime discount on the monthly rate. Cancel anytime with no penalty.</p>
                 </div>
                 <div style="border-bottom:1px solid var(--border);padding-bottom:24px;">
-                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">What happens to my email deliverability?</h3>
-                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">You get your own dedicated IP address for email sending. No risk of being blacklisted because another tenant sent spam. Your reputation is yours alone.</p>
+                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">How do extra users work?</h3>
+                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">The Professional plan includes 2 users at $89/mo. Each additional user is $39/mo. The Enterprise plan includes unlimited users with no per-seat charges.</p>
                 </div>
                 <div>
-                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">Is there really no user limit?</h3>
-                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Correct. Add your entire team, contractors, and new hires without your bill increasing. The only limit is your server's resources—which you can upgrade anytime.</p>
+                    <h3 style="font-size:14px;font-weight:600;color:var(--text-heading);margin-bottom:8px;">Can I switch plans later?</h3>
+                    <p style="font-size:13px;color:var(--text-body);line-height:1.7;">Yes. Upgrading to Enterprise is seamless&mdash;we scale your resources and activate new features immediately. No migration, no downtime.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section style="padding:80px 0;background:var(--bg);">
-    <div style="max-width:1152px;margin:0 auto;padding:0 24px;text-align:center;">
-        <h2 style="font-size:32px;font-weight:700;letter-spacing:-0.03em;color:var(--text-heading);margin-bottom:12px;">Start with a 30-day trial.</h2>
-        <p style="font-size:15px;color:var(--text-body);margin-bottom:32px;">Full access to Business plan. No credit card required. Cancel anytime.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-            <a href="https://app.edway.io/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding:13px 28px;font-size:15px;">
+<!-- ─── CTA ──────────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:var(--bg-subtle);">
+    <div style="max-width:620px;margin:0 auto;padding:0 24px;text-align:center;">
+        <p class="edway-label" style="margin-bottom:14px;">No risk. No pressure.</p>
+        <h2 style="font-size:clamp(28px,3.5vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-heading);margin-bottom:16px;">
+            Start your 3-month free trial today.
+        </h2>
+        <p style="font-size:16px;color:var(--text-body);line-height:1.75;margin-bottom:36px;">
+            Full Professional plan access. No credit card. No commitment.
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-bottom:24px;">
+            <a href="https://app.edway.io/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;">
                 Try Live Demo
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="padding:13px 28px;font-size:15px;">
+            <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;">
                 Book a demo
             </a>
         </div>
-        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;">30-day money-back guarantee · Setup fee waived on annual plans</p>
+
+        <p style="font-size:13px;color:var(--text-muted);">
+            <a href="{% url 'marketing:demo' %}" style="color:var(--blue);text-decoration:none;font-weight:600;">Start your 3-month free trial &rarr;</a>
+        </p>
     </div>
 </section>
 

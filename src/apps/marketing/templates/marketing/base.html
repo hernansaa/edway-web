@@ -314,7 +314,7 @@
     <!-- Footer — deep navy, authoritative -->
     <footer style="background: var(--navy-footer); color: #94A3B8;">
         <div style="max-width:1152px;margin:0 auto;padding:64px 24px 40px;">
-            <div class="grid grid-cols-2 md:grid-cols-5" style="gap:40px;">
+            <div class="grid grid-cols-2 md:grid-cols-4" style="gap:40px;">
 
                 <!-- Brand -->
                 <div style="grid-column:span 2;">
@@ -340,6 +340,7 @@
                     </ul>
                 </div>
 
+                {% comment %}
                 <!-- Resources -->
                 <div>
                     <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#475569;margin-bottom:16px;">Resources</p>
@@ -348,6 +349,7 @@
                         <li><a href="{% url 'marketing:case_studies' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Case studies</a></li>
                     </ul>
                 </div>
+                {% endcomment %}
 
                 <!-- Company -->
                 <div>
