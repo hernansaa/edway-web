@@ -239,7 +239,7 @@ class FeaturesView(TemplateView):
                         "features": [
                             {
                                 "title": "WhatsApp Integration",
-                                "description": "Built-in WhatsApp messaging with automated templates. Send quotes, reminders, and updates directly from the platform.",
+                                "description": "Built-in WhatsApp messaging with automated templates triggered automatically on new enquiries.",
                             },
                             {
                                 "title": "Email Template System",
