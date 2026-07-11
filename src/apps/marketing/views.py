@@ -404,7 +404,7 @@ class PricingView(TemplateView):
                         "extra_user_annual_ongoing": "$31.20",
                         "description": "Everything your agency needs to run and grow\u2014CRM, website, automation, and custom development.",
                         "features": [
-                            "2 users included ($39/mo per extra user)",
+                            "2 users included",
                             "Unlimited students & quotations",
                             "Full agency website included",
                             "Lead pipeline with 8 customizable stages",
