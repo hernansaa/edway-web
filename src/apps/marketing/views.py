@@ -273,7 +273,7 @@ class FeaturesView(TemplateView):
                             },
                             {
                                 "title": "Landing Page Builder",
-                                "description": "Create unlimited landing pages for programs, destinations, or schools. Built-in lead capture forms with automatic CRM integration.",
+                                "description": "Create landing pages for programs, destinations, or schools. Built-in lead capture forms with automatic CRM integration.",
                             },
                             {
                                 "title": "Blog System with SEO",
