@@ -256,10 +256,11 @@
 
             <!-- Center nav -->
             <nav class="hidden md:flex" style="gap:28px;align-items:center;">
+                <a href="{% url 'marketing:home' %}" class="nav-link">Home</a>
                 <a href="{% url 'marketing:features' %}" class="nav-link">Features</a>
+                <a href="{% url 'marketing:why_us' %}" class="nav-link">Why Us</a>
                 <a href="{% url 'marketing:pricing' %}" class="nav-link">Pricing</a>
-                <a href="{% url 'marketing:comparison' %}" class="nav-link">Compare</a>
-                <a href="{% url 'marketing:documentation' %}" class="nav-link">Docs</a>
+                <!-- <a href="{% url 'marketing:documentation' %}" class="nav-link">Docs</a> -->
                 <a href="{% url 'marketing:about' %}" class="nav-link">About</a>
             </nav>
 
@@ -291,10 +292,11 @@
              x-transition:leave-end="opacity-0 -translate-y-2"
              style="border-top:1px solid var(--border);background:#fff;">
             <div style="max-width:1152px;margin:0 auto;padding:16px 24px;display:flex;flex-direction:column;gap:16px;">
+                <a href="{% url 'marketing:home' %}" class="nav-link" style="padding:4px 0;">Home</a>
                 <a href="{% url 'marketing:features' %}" class="nav-link" style="padding:4px 0;">Features</a>
                 <a href="{% url 'marketing:pricing' %}" class="nav-link" style="padding:4px 0;">Pricing</a>
-                <a href="{% url 'marketing:comparison' %}" class="nav-link" style="padding:4px 0;">Compare</a>
-                <a href="{% url 'marketing:documentation' %}" class="nav-link" style="padding:4px 0;">Docs</a>
+                <a href="{% url 'marketing:why_us' %}" class="nav-link" style="padding:4px 0;">Why Us</a>
+                <!-- <a href="{% url 'marketing:documentation' %}" class="nav-link" style="padding:4px 0;">Docs</a> -->
                 <a href="{% url 'marketing:about' %}" class="nav-link" style="padding:4px 0;">About</a>
                 <div style="padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px;">
                     <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="justify-content:center;text-align:center;">Sign in</a>
@@ -320,7 +322,9 @@
                         <img src="{% static 'img/edway-logo-white.svg' %}" alt="Edway" style="height:40px;width:auto;">
                     </a>
                     <p style="font-size:13px;line-height:1.75;color:#64748B;max-width:280px;">
-                        The CRM built for education recruitment.<br>From first enquiry to enrolment—automated.
+                        The CRM built for international education recruitment agencies.<br>
+                        From first enquiry to enrolment—automated.<br>
+                        Built by experts who understand the industry.
                     </p>
                 </div>
 
@@ -330,7 +334,7 @@
                     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
                         <li><a href="{% url 'marketing:features' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Features</a></li>
                         <li><a href="{% url 'marketing:pricing' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Pricing</a></li>
-                        <li><a href="{% url 'marketing:comparison' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Compare</a></li>
+                        <li><a href="{% url 'marketing:why_us' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Why Us</a></li>
                         <li><a href="{% url 'marketing:demo' %}" style="font-size:13px;color:#64748B;text-decoration:none;transition:color 0.15s;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#64748B'">Demo</a></li>
                         <li><a href="https://app.edway.io/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:#94A3B8;text-decoration:none;transition:color 0.15s;font-weight:500;" onmouseover="this.style.color='#CBD5E1'" onmouseout="this.style.color='#94A3B8'">Live Demo</a></li>
                     </ul>

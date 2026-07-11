@@ -2,14 +2,15 @@
 
 {% block content %}
 
-<section style="padding:72px 0 80px;background:var(--bg);">
+<!-- ─── HERO + STORY ─────────────────────────────────────────── -->
+<section style="padding:72px 0 56px;border-bottom:1px solid var(--border);background:var(--bg);">
     <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
         <div class="grid grid-cols-1 lg:grid-cols-2" style="gap:64px;align-items:start;">
 
             <div>
                 <p class="edway-label" style="margin-bottom:14px;">About</p>
                 <h1 style="font-size:clamp(32px,4vw,52px);font-weight:700;letter-spacing:-0.04em;line-height:1.1;color:var(--text-heading);margin-bottom:24px;">
-                    Built by operators, not observers.
+                    {{ founder_story.title }}
                 </h1>
 
                 <div style="display:flex;flex-direction:column;gap:16px;">
@@ -17,31 +18,88 @@
                     <p style="font-size:16px;color:var(--text-body);line-height:1.8;">{{ paragraph }}</p>
                     {% endfor %}
                 </div>
-
-                <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap;">
-                    <a href="{% url 'marketing:demo' %}" class="btn-primary" style="padding:13px 28px;font-size:15px;">
-                        Book a demo
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
-                    <a href="{% url 'marketing:features' %}" class="btn-secondary" style="padding:13px 28px;font-size:15px;">See features</a>
-                </div>
             </div>
 
             <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px;">
                 <div class="edway-card" style="padding:28px;">
-                    <p class="edway-label" style="margin-bottom:12px;">The problem</p>
-                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">Every existing CRM for education recruitment was either built by software engineers who never worked in an agency, or acquired by investors who raised prices and stopped shipping features.</p>
+                    <p class="edway-label" style="margin-bottom:10px;">The problem</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">Most platforms in this space are built by people who have never sat across from a student. Others started with good intentions but lost focus over time. The result is the same: agencies pay handsomely for tools that don\u2019t truly understand their work.</p>
                 </div>
                 <div class="edway-card" style="padding:28px;">
-                    <p class="edway-label" style="margin-bottom:12px;">The solution</p>
-                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We ran a real agency. We know what takes 3 hours and should take 3 minutes. Edway was built to eliminate that gap—every feature comes from a real frustration.</p>
+                    <p class="edway-label" style="margin-bottom:10px;">The solution</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We built Edway after running real agencies. We know what takes three hours and should take three minutes. Every feature\u2014from multi-currency quotations to WhatsApp automation\u2014comes from a genuine frustration we experienced firsthand.</p>
                 </div>
                 <div class="edway-card" style="padding:28px;">
-                    <p class="edway-label" style="margin-bottom:12px;">The commitment</p>
-                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We ship weekly. We talk to every customer. We don't raise prices to cover marketing budgets. This is the product we would have paid anything for—so we keep the price fair.</p>
+                    <p class="edway-label" style="margin-bottom:10px;">The commitment</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;">We ship improvements weekly. We speak directly with every customer. We don't raise prices to fund marketing campaigns. This is the platform we would have paid anything for\u2014so we keep it accessible for agencies of every size.</p>
                 </div>
             </div>
+
         </div>
+    </div>
+</section>
+
+<!-- ─── TEAM ──────────────────────────────────────────────────── -->
+<section style="padding:80px 0;border-bottom:1px solid var(--border);background:var(--bg-subtle);">
+    <div style="max-width:1152px;margin:0 auto;padding:0 24px;">
+
+        <div style="max-width:640px;margin-bottom:56px;">
+            <p class="edway-label" style="margin-bottom:14px;">Team</p>
+            <h2 style="font-size:clamp(28px,3.5vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-heading);margin-bottom:16px;">
+                Built by people who understand your business.
+            </h2>
+            <p style="font-size:16px;color:var(--text-body);line-height:1.75;">
+                Edway isn't a large corporation with layers of management and disconnected product teams. We're a focused team of operators who built this platform because we needed it ourselves.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2" style="gap:24px;">
+
+            {% for member in team %}
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:36px;display:flex;gap:24px;align-items:flex-start;transition:border-color 0.15s,box-shadow 0.15s;" onmouseover="this.style.borderColor='var(--blue-border)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'">
+                <div style="width:64px;height:64px;border-radius:50%;background:var(--blue-light);border:2px solid var(--blue-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <span style="font-size:20px;font-weight:700;color:var(--blue-text);letter-spacing:-0.02em;">{{ member.initials }}</span>
+                </div>
+                <div>
+                    <h3 style="font-size:17px;font-weight:600;color:var(--text-heading);margin-bottom:4px;">{{ member.name }}</h3>
+                    <p style="font-size:13px;color:var(--blue);font-weight:500;margin-bottom:12px;">{{ member.role }}</p>
+                    <p style="font-size:14px;color:var(--text-body);line-height:1.75;margin-bottom:16px;">{{ member.bio }}</p>
+                    <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color 0.15s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-muted)'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── CTA ──────────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:var(--bg);">
+    <div style="max-width:620px;margin:0 auto;padding:0 24px;text-align:center;">
+        <p class="edway-label" style="margin-bottom:14px;">Let's talk</p>
+        <h2 style="font-size:clamp(28px,3.5vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-heading);margin-bottom:16px;">
+            See what Edway can do for your agency.
+        </h2>
+        <p style="font-size:16px;color:var(--text-body);line-height:1.75;margin-bottom:36px;">
+            Built by people who did your job. Ready to show you how it works.
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-bottom:32px;">
+            <a href="https://app.edway.io/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;">
+                Try Live Demo
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;">
+                Book a demo
+            </a>
+        </div>
+
+        <p style="font-size:13px;color:var(--text-muted);">
+            <a href="{% url 'marketing:demo' %}" style="color:var(--blue);text-decoration:none;font-weight:600;">Start your 3-month free trial →</a>
+        </p>
     </div>
 </section>
 

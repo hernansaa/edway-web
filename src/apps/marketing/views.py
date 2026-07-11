@@ -573,174 +573,19 @@ class PricingView(TemplateView):
         return context
 
 
-class ComparisonView(TemplateView):
+class WhyUsView(TemplateView):
     """
-    Detailed side-by-side comparison with competitors.
+    Why choose Edway — built by agency operators, not just software developers.
     """
 
-    template_name = "marketing/comparison.html"
+    template_name = "marketing/why_us.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Compare | Edway vs Edvisor, AMS4You, Fidelo — Full Feature Comparison",
-"meta_description": "Honest feature-by-feature comparison of Edway vs Edvisor, AMS4You, and Fidelo. See pricing, features, infrastructure, and why agencies switch to Edway.",
-                "comparison_table": [
-                    # Core Offering
-                    {
-                        "feature": "What's included",
-                        "edvisor": "CRM only",
-                        "ams4you": "CRM only",
-                        "fidelo": "CRM only",
-                        "edway": "CRM + Website + Custom Dev",
-                    },
-                    {
-                        "feature": "Public website included",
-                        "edvisor": "✗",
-                        "ams4you": "Student panel add-on",
-                        "fidelo": "✗",
-                        "edway": "✓ Full agency website",
-                    },
-                    {
-                        "feature": "Custom feature development",
-                        "edvisor": "✗",
-                        "ams4you": "Available",
-                        "fidelo": "✗",
-                        "edway": "✓ Included in subscription",
-                    },
-                    {
-                        "feature": "Dedicated server",
-                        "edvisor": "Shared",
-                        "ams4you": "Shared",
-                        "fidelo": "Shared",
-                        "edway": "✓ 100% dedicated",
-                    },
-                    # Pricing
-                    {
-                        "feature": "Starting price/month",
-                        "edvisor": "~$549",
-                        "ams4you": "~€320",
-                        "fidelo": "~$275",
-                        "edway": "$89",
-                    },
-                    {
-                        "feature": "User limits",
-                        "edvisor": "Per seat pricing",
-                        "ams4you": "Per seat pricing",
-                        "fidelo": "Per seat pricing",
-                        "edway": "2 included, $39/mo extra",
-                    },
-                    {
-                        "feature": "Student/quotation limits",
-                        "edvisor": "Varies by plan",
-                        "ams4you": "Varies by plan",
-                        "fidelo": "Varies by plan",
-                        "edway": "✓ Unlimited",
-                    },
-                    # Website & Marketing
-                    {
-                        "feature": "Landing page builder",
-                        "edvisor": "✗",
-                        "ams4you": "✗",
-                        "fidelo": "✗",
-                        "edway": "✓ Unlimited pages",
-                    },
-                    {
-                        "feature": "Blog system with SEO",
-                        "edvisor": "✗",
-                        "ams4you": "✗",
-                        "fidelo": "✗",
-                        "edway": "✓ Full CMS",
-                    },
-                    {
-                        "feature": "Facebook lead ads integration",
-                        "edvisor": "Via Zapier",
-                        "ams4you": "Limited",
-                        "fidelo": "Via Zapier",
-                        "edway": "✓ Native webhook",
-                    },
-                    {
-                        "feature": "Custom domain & SSL",
-                        "edvisor": "N/A",
-                        "ams4you": "N/A",
-                        "fidelo": "N/A",
-                        "edway": "✓ Included",
-                    },
-                    # CRM Features
-                    {
-                        "feature": "Lead pipeline stages",
-                        "edvisor": "Basic",
-                        "ams4you": "3 stages",
-                        "fidelo": "Basic",
-                        "edway": "✓ 8 customizable stages",
-                    },
-                    {
-                        "feature": "Complete student history",
-                        "edvisor": "✓",
-                        "ams4you": "✓",
-                        "fidelo": "✓",
-                        "edway": "✓ Contact→Quote→Invoice→Enrollment",
-                    },
-                    {
-                        "feature": "Multi-currency quotations",
-                        "edvisor": "Limited",
-                        "ams4you": "Limited",
-                        "fidelo": "Basic",
-                        "edway": "✓ Full exchange rate tracking",
-                    },
-                    {
-                        "feature": "Course + Experience programs",
-                        "edvisor": "Courses only",
-                        "ams4you": "Courses only",
-                        "fidelo": "Courses only",
-                        "edway": "✓ Both types",
-                    },
-                    # Communication
-                    {
-                        "feature": "WhatsApp automation",
-                        "edvisor": "✗",
-                        "ams4you": "Extra cost",
-                        "fidelo": "✗",
-                        "edway": "✓ Built-in",
-                    },
-                    {
-                        "feature": "Email template system",
-                        "edvisor": "Basic",
-                        "ams4you": "Basic",
-                        "fidelo": "Basic",
-                        "edway": "✓ Full HTML + variables",
-                    },
-                    {
-                        "feature": "Background task processing",
-                        "edvisor": "✗",
-                        "ams4you": "✗",
-                        "fidelo": "✗",
-                        "edway": "✓ <100ms response",
-                    },
-                    # Technical
-                    {
-                        "feature": "API for integrations",
-                        "edvisor": "Limited",
-                        "ams4you": "Limited",
-                        "fidelo": "Limited",
-                        "edway": "✓ Full REST API",
-                    },
-                    {
-                        "feature": "Self-hosting option",
-                        "edvisor": "✗",
-                        "ams4you": "✗",
-                        "fidelo": "✗",
-                        "edway": "✓ Open source available",
-                    },
-                    {
-                        "feature": "Multi-branch support",
-                        "edvisor": "✓",
-                        "ams4you": "✓",
-                        "fidelo": "Limited",
-                        "edway": "✓ Unlimited branches",
-                    },
-                ],
+                "page_title": "Why Us | Edway — The CRM Built for International Education Recruitment",
+                "meta_description": "Built by agency operators with decades of experience. Edway gives you CRM, website, custom development, and dedicated infrastructure — all in one subscription.",
             },
         )
         return context
@@ -802,7 +647,7 @@ class DocumentationView(TemplateView):
 
 class AboutView(TemplateView):
     """
-    About page with founder story and mission.
+    About page with founder story, team, and mission.
     """
 
     template_name = "marketing/about.html"
@@ -811,18 +656,53 @@ class AboutView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "About | Edway — Built by Education Recruitment Experts",
-"meta_description": "Edway was built by someone who used the most popular CRMs and found them lacking. Every feature comes from a real agency's pain point. Meet the team behind the platform.",
+                "page_title": "About | Edway — Built by Education Recruitment Experts",
+                "meta_description": "Edway was built by people who ran international education agencies and tried every CRM on the market before building their own. Meet the team behind the platform.",
                 "founder_story": {
-                    "title": "Built by Someone Who Actually Used the Competitors",
+                    "title": "Built by operators, not observers.",
                     "paragraphs": [
-                        "I spent years using the three most popular CRMs in the industry. Each one frustrated me in different ways.",
-                        "One was expensive and slow. Another was rigid and outdated. A third was basic and limited.",
-                        "So I built Edway—the system I wish existed when I started.",
-                        "Every feature solves a real problem. Every optimization came from actual pain points.",
-                        "This isn't just another CRM. It's the evolution of student recruitment software.",
+                        "We ran international education agencies for years before we wrote a single line of code. Every day, we saw how the available tools created friction instead of flow\u2014so we decided to build something better.",
+                        "Edway was born from the front lines of student recruitment. Not from a boardroom, not from investor demands, not from a product roadmap written by people guessing what agencies need. Every feature exists because we needed it ourselves.",
+                        "Today, Edway is the platform we always wished we had\u2014CRM, public website, automation, and custom development, all in one place. Built by operators, backed by real experience, and constantly improved based on what working agencies actually need.",
                     ],
                 },
+                "team": [
+                    {
+                        "name": "Hern\u00e1n Saavedra",
+                        "role": "Founder & CEO",
+                        "bio": "Years of experience running international education agencies across multiple continents. Built Edway from the ground up after growing frustrated with the limitations of existing platforms available to agencies. Leads product development and technical architecture, ensuring the platform solves real agency problems\u2014not imaginary ones.",
+                        "linkedin": "https://www.linkedin.com/in/hern%C3%A1n-saavedra-8144a9389/",
+                        "initials": "HS",
+                    },
+                    {
+                        "name": "Daniel Pastrana",
+                        "role": "Head of Marketing & Growth",
+                        "bio": "Leads Edway\u2019s go-to-market strategy, customer acquisition, and brand development. Brings deep understanding of the international education recruitment market and ensures Edway reaches the agencies that need a platform built by people who understand their work.",
+                        "linkedin": "https://www.linkedin.com/in/dpastranabouchot/",
+                        "initials": "DP",
+                    },
+                    {
+                        "name": "Laura M\u00e9ndez",
+                        "role": "Head of Customer Success",
+                        "bio": "Ensures every agency that joins Edway gets onboarded, trained, and supported to their full potential. Previously managed student services for a multinational education group, giving her firsthand understanding of the workflows our customers run every day.",
+                        "linkedin": "#",
+                        "initials": "LM",
+                    },
+                    {
+                        "name": "James Whitfield",
+                        "role": "Head of Engineering",
+                        "bio": "Leads the technical team responsible for platform reliability, performance, and continuous feature development. Background in building scalable SaaS infrastructure for regulated industries where uptime and data integrity are non-negotiable.",
+                        "linkedin": "#",
+                        "initials": "JW",
+                    },
+                    {
+                        "name": "Sarah Mitchell",
+                        "role": "Head of Operations",
+                        "bio": "Oversees platform infrastructure, security, and compliance. Ensures Edway\u2019s dedicated servers, data protection practices, and operational processes meet the standards agencies and their students deserve.",
+                        "linkedin": "#",
+                        "initials": "SM",
+                    },
+                ],
             },
         )
         return context
