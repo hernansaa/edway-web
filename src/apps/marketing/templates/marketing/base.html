@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/favicon.svg' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32.png' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/favicon-32.png' %}">
     <title>{% block title %}{{ page_title|default:"Edway | CRM + Website + WhatsApp for Education Agencies" }}{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}{{ meta_description|default:'Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included.' }}{% endblock %}">
     <meta name="robots" content="index, follow">
