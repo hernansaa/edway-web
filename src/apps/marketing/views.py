@@ -269,7 +269,7 @@ class FeaturesView(TemplateView):
                         "features": [
                             {
                                 "title": "Professional Agency Website",
-                                "description": "Complete public-facing website included. Modern design, mobile-responsive, SEO-optimized. Your domain, your branding.",
+                                "description": "A complete agency website included with your plan — mobile-responsive, SEO-optimized, and branded to you. Use it as your main site or keep your existing one. No pressure.",
                             },
                             {
                                 "title": "Landing Page Builder",
