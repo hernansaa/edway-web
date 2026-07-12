@@ -60,48 +60,6 @@ class HomeView(TemplateView):
                         "description": "Beautiful, dark mode, mobile-responsive. Not stuck in 2010 like competitors.",
                     },
                 ],
-                "comparison_rows": [
-                    {
-                        "label": "Starting price",
-                        "value": "<s style=\"color:#EF4444;\">$89/mo</s> <span style=\"color:var(--green);font-weight:700;\">$44.50/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">for 2 users</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">first year with annual billing</span>",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Additional users",
-                        "value": "<s style=\"color:#EF4444;\">$39/mo</s> <span style=\"color:var(--green);font-weight:700;\">$19.50/mo</span> <span style=\"display:inline-block;background:#EF4444;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;\">50% OFF</span> <span style=\"color:var(--text-muted);font-size:11px;\">first year with annual billing</span>",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Yearly renewal",
-                        "value": "<span style=\"color:var(--text-body);\">$71.20/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">base</span> · <span style=\"color:var(--text-body);\">$31.20/mo</span> <span style=\"color:var(--text-muted);font-size:11px;\">extra user</span> <span style=\"color:var(--green);font-size:11px;font-weight:600;\">(20% off)</span>",
-                        "highlight": False,
-                    },
-                    {
-                        "label": "WhatsApp &amp; email",
-                        "value": "Automated sequences included",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Landing pages",
-                        "value": "Unlimited, built-in",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Lead pipeline",
-                        "value": "8 customizable stages",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Student history",
-                        "value": "Full timeline from enquiry to enrollment",
-                        "highlight": True,
-                    },
-                    {
-                        "label": "Multi-currency quotes",
-                        "value": "Automatic exchange rates",
-                        "highlight": True,
-                    },
-                ],
             },
         )
         return context
