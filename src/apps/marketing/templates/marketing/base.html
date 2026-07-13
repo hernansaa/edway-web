@@ -271,7 +271,7 @@
 
             <!-- Right CTAs -->
             <div class="hidden md:flex" style="gap:12px;align-items:center;">
-                <a href="https://demo.edway.app/ed-admin/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding:9px 18px;font-size:13px;">
+                <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="padding:9px 18px;font-size:13px;">
                     Sign up
                 </a>
                 <a href="{% url 'marketing:demo' %}" class="btn-primary" style="padding:9px 18px;font-size:13px;">
@@ -304,7 +304,7 @@
                 <!-- <a href="{% url 'marketing:documentation' %}" class="nav-link" style="padding:4px 0;">Docs</a> -->
                 <a href="{% url 'marketing:about' %}" class="nav-link" style="padding:4px 0;">About</a>
                 <div style="padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px;">
-                    <a href="https://demo.edway.app/ed-admin/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="justify-content:center;text-align:center;">Sign up</a>
+                    <a href="{% url 'marketing:demo' %}" class="btn-secondary" style="justify-content:center;text-align:center;">Sign up</a>
                     <a href="{% url 'marketing:demo' %}" class="btn-primary" style="justify-content:center;">Try Live Demo</a>
                 </div>
             </div>
