@@ -17,4 +17,6 @@ urlpatterns = [
     path("contact/", views.ContactView.as_view(), name="contact"),
     # Demo request form submission
     path("request-demo/", views.RequestDemoView.as_view(), name="request_demo"),
+    # Test pages
+    path("test-embed/", views.TestEmbedView.as_view(), name="test_embed"),
 ]

@@ -23,8 +23,8 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Edway | CRM + Website + WhatsApp for Education Agencies",
-"meta_description": "Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included. Save $450/month vs other CRMs with unlimited users.",
+                "page_title": "Edway | CRM + Website + WhatsApp for Education Agencies",
+                "meta_description": "Edway is the all-in-one student recruitment platform. CRM, public website, WhatsApp automation, and custom development included. Save $450/month vs other CRMs with unlimited users.",
                 "showcase": generate_showcase_data(),
                 "hero_title": "The Student Recruitment CRM That Actually Works",
                 "hero_subtitle": "Built by someone who used the most popular CRMs—and found them all lacking. Save $450/month with better features.",
@@ -76,8 +76,8 @@ class FeaturesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Features | Edway — Complete Platform for Education Agencies",
-"meta_description": "Explore all Edway features: lead management, intelligent quotations, invoicing, WhatsApp automation, email templates, public website builder, and custom development for education agencies.",
+                "page_title": "Features | Edway — Complete Platform for Education Agencies",
+                "meta_description": "Explore all Edway features: lead management, intelligent quotations, invoicing, WhatsApp automation, email templates, public website builder, and custom development for education agencies.",
                 "feature_categories": [
                     {
                         "name": "Lead Management & CRM",
@@ -463,8 +463,8 @@ class DemoView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Request a Demo | Edway — See the CRM in Action",
-"meta_description": "Request a personalized demo of Edway. See how the CRM, website builder, WhatsApp automation, and custom development work for your education agency in 30 minutes.",
+                "page_title": "Request a Demo | Edway — See the CRM in Action",
+                "meta_description": "Request a personalized demo of Edway. See how the CRM, website builder, WhatsApp automation, and custom development work for your education agency in 30 minutes.",
             },
         )
         return context
@@ -481,8 +481,8 @@ class CaseStudiesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Case Studies | Edway — Real Results from Education Agencies",
-"meta_description": "Real results from education agencies using Edway. See how agencies increased conversions, automated WhatsApp, and saved money with the all-in-one recruitment platform.",
+                "page_title": "Case Studies | Edway — Real Results from Education Agencies",
+                "meta_description": "Real results from education agencies using Edway. See how agencies increased conversions, automated WhatsApp, and saved money with the all-in-one recruitment platform.",
             },
         )
         return context
@@ -499,8 +499,8 @@ class DocumentationView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Documentation | Edway — Getting Started & API Reference",
-"meta_description": "Complete Edway documentation: getting started guide, API reference, platform setup, and integration tutorials for education agencies using the CRM and website builder.",
+                "page_title": "Documentation | Edway — Getting Started & API Reference",
+                "meta_description": "Complete Edway documentation: getting started guide, API reference, platform setup, and integration tutorials for education agencies using the CRM and website builder.",
             },
         )
         return context
@@ -566,8 +566,26 @@ class ContactView(TemplateView):
         context = super().get_context_data(**kwargs)
         context.update(
             {
-"page_title": "Contact | Edway — Get in Touch with Our Team",
-"meta_description": "Contact the Edway team. Reach us by email at info@edway.io, book a 30-minute call, or request a personalized demo of the student recruitment platform.",
+                "page_title": "Contact | Edway — Get in Touch with Our Team",
+                "meta_description": "Contact the Edway team. Reach us by email at info@edway.io, book a 30-minute call, or request a personalized demo of the student recruitment platform.",
+            },
+        )
+        return context
+
+
+class TestEmbedView(TemplateView):
+    """
+    Test page for the Edway lead form iframe embed.
+    """
+
+    template_name = "marketing/test_embed.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(
+            {
+                "page_title": "Test — Lead Form Embed",
+                "meta_description": "Test page for the Edway lead form iframe embed.",
             },
         )
         return context
